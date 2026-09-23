@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#0b456d" />
+  <title>Diário de Classe • Florindo Educação</title>
+  <style>
+    :root{
+      --navy:#0b456d;
+      --navy-2:#073451;
+      --teal:#0a98a8;
+      --teal-2:#0eb7ba;
+      --gold:#f0a31a;
+      --cream:#f7f3ea;
+      --paper:#fffdf9;
+      --ink:#163042;
+      --muted:#6c7c86;
+      --line:#e6ecef;
+      --danger:#d9534f;
+      --success:#1f9d68;
+      --warn:#d88b16;
+      --shadow:0 14px 35px rgba(11,69,109,.10);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#eef3f5;color:var(--ink)}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .app{min-height:100vh;display:grid;grid-template-columns:280px 1fr}
+    .sidebar{position:sticky;top:0;height:100vh;background:linear-gradient(180deg,var(--navy-2),var(--navy));color:white;padding:24px 18px;display:flex;flex-direction:column;gap:22px;box-shadow:10px 0 30px rgba(7,52,81,.08);z-index:20}
+    .brand{display:flex;align-items:center;gap:12px;padding:4px 8px 16px;border-bottom:1px solid rgba(255,255,255,.14)}
+    .brand-logo{width:58px;height:58px;flex:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.14))}
+    .brand h1{font-size:16px;margin:0;letter-spacing:.08em}.brand p{font-size:11px;margin:4px 0 0;color:#c9e6eb;letter-spacing:.16em}
+    .nav{display:flex;flex-direction:column;gap:8px}
+    .nav-btn{width:100%;border:0;background:transparent;color:#d8e7ed;padding:12px 13px;border-radius:14px;display:flex;align-items:center;gap:12px;text-align:left;font-weight:650;transition:.18s ease}
+    .nav-btn:hover{background:rgba(255,255,255,.08);color:white}.nav-btn.active{background:linear-gradient(135deg,rgba(14,183,186,.26),rgba(255,255,255,.10));color:white;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+    .nav-icon{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.08);font-weight:800}
+    .sidebar-foot{margin-top:auto;padding:14px;border-radius:16px;background:rgba(255,255,255,.08);font-size:12px;line-height:1.45;color:#d7e7ed}.sidebar-foot b{color:white}
+    .content{min-width:0;display:flex;flex-direction:column;min-height:100vh}
+    .topbar{height:74px;position:sticky;top:0;z-index:15;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #e2eaed;display:flex;align-items:center;justify-content:space-between;padding:0 28px}
+    .topbar-title strong{display:block;font-size:18px}.topbar-title span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+    .profile{display:flex;align-items:center;gap:10px}.avatar{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,var(--teal),var(--navy));color:#fff;display:grid;place-items:center;font-weight:800}.profile-text{font-size:12px}.profile-text b{display:block;font-size:13px}.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#edf8f8;color:#16727c;font-size:11px;font-weight:800;border:1px solid #d7eeee}
+    main{padding:28px;max-width:1500px;width:100%;margin:0 auto 90px}
+    .view{display:none}.view.active{display:block}
+    .hero{background:linear-gradient(135deg,#fff 0%,#fbfcfc 52%,#f6fbfb 100%);border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;right:-80px;bottom:-110px;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(14,183,186,.16),transparent 64%)}
+    .hero h2{margin:0 0 10px;font-size:30px;line-height:1.1;color:var(--navy)}.hero p{margin:0;color:var(--muted);max-width:720px;line-height:1.55}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.hero-logo{display:flex;justify-content:center;align-items:center;position:relative;z-index:2}.hero-logo svg{width:200px;height:200px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:28px 0 14px}.section-head h3{margin:0;font-size:18px;color:var(--navy)}.section-head p{margin:4px 0 0;font-size:12px;color:var(--muted)}
+    .grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.stat-card,.card{background:white;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 8px 24px rgba(15,56,78,.06)}.stat-card{padding:18px}.stat-label{font-size:12px;color:var(--muted);font-weight:700}.stat-value{font-size:28px;color:var(--navy);font-weight:850;margin-top:7px}.stat-foot{font-size:11px;color:#8a969d;margin-top:3px}
+    .card{padding:20px}.cards-2{grid-template-columns:repeat(2,minmax(0,1fr))}.cards-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .quick-card{border:0;text-align:left;background:white;padding:19px;border-radius:20px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(15,56,78,.05);transition:.18s}.quick-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.quick-card .qicon{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-weight:900;background:#eef8f9;color:var(--teal);margin-bottom:13px}.quick-card b{display:block;color:var(--navy)}.quick-card span{display:block;margin-top:5px;color:var(--muted);font-size:12px;line-height:1.4}
+    .class-toolbar,.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.field{display:flex;flex-direction:column;gap:6px;min-width:160px}.field.grow{flex:1}.field label{font-size:11px;font-weight:800;color:#607480;text-transform:uppercase;letter-spacing:.04em}.input,select,textarea{width:100%;border:1px solid #d7e1e5;background:white;border-radius:12px;padding:10px 12px;color:var(--ink);outline:none;transition:.15s}.input:focus,select:focus,textarea:focus{border-color:#7ccbd0;box-shadow:0 0 0 3px rgba(10,152,168,.10)}textarea{min-height:96px;resize:vertical}
+    .btn{border:0;border-radius:12px;padding:10px 14px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.15s}.btn.primary{background:linear-gradient(135deg,var(--teal),#087c97);color:white}.btn.navy{background:var(--navy);color:white}.btn.gold{background:var(--gold);color:#352b18}.btn.ghost{background:#f4f7f8;color:#48616e;border:1px solid #e1e8eb}.btn.danger{background:#fff1f0;color:#b3403c;border:1px solid #f2d2d0}.btn.success{background:#ebf8f1;color:#13714a;border:1px solid #caebda}.btn.small{padding:7px 10px;border-radius:10px;font-size:11px}
+    .class-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.class-card{background:white;border:1px solid var(--line);border-radius:16px;padding:14px;cursor:pointer;transition:.15s}.class-card:hover{border-color:#b7dce0;transform:translateY(-1px)}.class-card b{display:block;color:var(--navy)}.class-card span{font-size:11px;color:var(--muted)}
+    .lesson-pills{display:flex;flex-wrap:wrap;gap:8px}.lesson-pill input{display:none}.lesson-pill span{display:inline-flex;padding:9px 12px;border-radius:11px;border:1px solid #d9e2e5;background:#fff;color:#61747e;font-size:12px;font-weight:800}.lesson-pill input:checked+span{background:#e7f7f8;border-color:#8bcfd3;color:#0a7783;box-shadow:inset 0 0 0 1px #8bcfd3}
+    .notice{padding:13px 14px;border-radius:14px;background:#fff8e9;border:1px solid #f3dfa9;color:#76602b;font-size:12px;line-height:1.45}.notice.info{background:#edf7fb;border-color:#d5eaf4;color:#345f75}.notice.success{background:#eef9f3;border-color:#d0ebdc;color:#286749}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px;background:white}.table{width:100%;border-collapse:collapse;min-width:680px}.table th,.table td{padding:11px 12px;border-bottom:1px solid #edf1f3;text-align:left;font-size:12px;vertical-align:middle}.table th{position:sticky;top:0;background:#f8fafb;color:#5e737f;font-size:11px;text-transform:uppercase;letter-spacing:.04em;z-index:1}.table tr:last-child td{border-bottom:0}.student-name{font-weight:750;color:#294555}.status-toggle{display:flex;gap:6px}.status-btn{border:1px solid #dfe7ea;background:white;border-radius:10px;padding:7px 10px;font-size:11px;font-weight:850;color:#71808a}.status-btn.present.active{background:#e8f8ef;border-color:#bce7cf;color:#16784f}.status-btn.absent.active{background:#fff0ef;border-color:#efc9c7;color:#b33d37}
+    .score{width:84px;text-align:center;border:1px solid #d9e2e5;border-radius:10px;padding:8px}.score.invalid{border-color:#e2a09c;background:#fff5f4}
+    .activity-list{display:flex;flex-direction:column;gap:8px;max-height:520px;overflow:auto}.activity-item{border:1px solid var(--line);background:white;border-radius:14px;padding:13px;cursor:pointer;transition:.15s}.activity-item.active{border-color:#88cdd2;background:#f0fbfb}.activity-item b{font-size:13px;color:var(--navy)}.activity-item small{display:block;color:var(--muted);margin-top:3px}
+    .split{display:grid;grid-template-columns:320px 1fr;gap:16px}.empty{text-align:center;padding:34px 18px;color:var(--muted)}.empty strong{display:block;color:var(--navy);font-size:16px;margin-bottom:6px}
+    .badge{display:inline-flex;align-items:center;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:850}.badge.blue{background:#eaf5fb;color:#286c8e}.badge.green{background:#eaf8f0;color:#1e734d}.badge.orange{background:#fff3dd;color:#916212}.badge.red{background:#fff0ef;color:#a4413c}.badge.gray{background:#eef2f4;color:#61727b}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(4,27,40,.52);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}.modal-backdrop.show{display:flex}.modal{width:min(760px,100%);max-height:92vh;overflow:auto;background:white;border-radius:22px;box-shadow:0 25px 80px rgba(0,0,0,.24)}.modal-head{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.modal-head h4{margin:0;color:var(--navy)}.modal-body{padding:20px}.modal-foot{padding:16px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:10px}
+    .mini-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed #e4eaed}.mini-row:last-child{border-bottom:0}.muted{color:var(--muted)}.right{text-align:right}.hidden{display:none!important}.mt{margin-top:16px}.mb{margin-bottom:16px}
+    .mobile-nav{display:none}
+    .toast{position:fixed;right:22px;bottom:22px;background:#163c50;color:white;padding:12px 15px;border-radius:13px;box-shadow:0 12px 35px rgba(0,0,0,.20);font-size:12px;font-weight:700;opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s;z-index:200}.toast.show{opacity:1;transform:translateY(0)}
+    @media (max-width:1100px){.stats{grid-template-columns:repeat(2,1fr)}.class-grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr}.hero-logo{display:none}.cards-3{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:820px){.app{display:block}.sidebar{display:none}.topbar{height:66px;padding:0 16px}.profile-text{display:none}main{padding:18px 14px 88px}.hero{padding:22px;border-radius:22px}.hero h2{font-size:25px}.stats,.cards-2,.cards-3{grid-template-columns:1fr 1fr}.class-grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.activity-list{max-height:240px}.mobile-nav{position:fixed;display:flex;left:10px;right:10px;bottom:10px;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border:1px solid #dfe8eb;border-radius:18px;padding:7px;z-index:50;box-shadow:0 10px 35px rgba(6,50,76,.14);overflow:auto}.mobile-nav button{min-width:68px;flex:1;border:0;background:transparent;border-radius:12px;padding:8px 7px;font-size:9px;font-weight:800;color:#6f8089}.mobile-nav button.active{background:#edf7f8;color:#0a7f89}.mobile-nav .mi{display:block;font-size:17px;margin-bottom:3px}.toast{left:14px;right:14px;bottom:86px;text-align:center}}
+    @media (max-width:520px){.stats,.cards-2,.cards-3,.class-grid{grid-template-columns:1fr}.hero-actions .btn{width:100%}.topbar-title strong{font-size:15px}.section-head{align-items:flex-start;flex-direction:column}.field{min-width:100%}}
+
+    /* TELA INICIAL SIMPLIFICADA */
+    body.home-mode{background:linear-gradient(180deg,#f8fbfc 0%,#eef5f6 100%)}
+    body.home-mode .app{display:block;min-height:100vh}
+    body.home-mode .sidebar,
+    body.home-mode .topbar,
+    body.home-mode .mobile-nav{display:none!important}
+    body.home-mode .content{min-height:100vh;display:block}
+    body.home-mode main{padding:0;margin:0;max-width:none;min-height:100vh}
+    body.home-mode #view-home.active{min-height:100vh;display:flex;align-items:flex-start;justify-content:center}
+    .simple-home{width:min(720px,100%);padding:48px 22px 64px;text-align:center}
+    .simple-brand{display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:38px}
+    .simple-brand svg{width:150px;height:150px;filter:drop-shadow(0 12px 24px rgba(11,69,109,.12))}
+    .simple-brand h1{margin:16px 0 0;color:var(--navy);font-size:28px;letter-spacing:.09em;font-weight:900}
+    .simple-brand p{margin:4px 0 0;color:var(--teal);font-size:13px;letter-spacing:.24em;font-weight:800}
+    .home-menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .home-menu-btn{min-height:132px;border:1px solid #dfe9ec;background:white;border-radius:24px;padding:22px 16px;box-shadow:0 10px 28px rgba(11,69,109,.07);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--navy);font-size:17px;font-weight:850;transition:.18s ease}
+    .home-menu-btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(11,69,109,.12);border-color:#b8dce0}
+    .home-menu-btn:active{transform:scale(.985)}
+    .home-menu-icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:#edf8f8;color:var(--teal);font-size:24px;font-weight:950}
+    .home-menu-btn.gold .home-menu-icon{background:#fff5df;color:#b8790c}
+    .home-menu-btn.navy .home-menu-icon{background:#edf3f7;color:var(--navy)}
+    .home-menu-btn.dangerish .home-menu-icon{background:#fff0ef;color:#b24a45}
+    .home-menu-btn.full{grid-column:1/-1}
+    @media (max-width:520px){
+      .simple-home{padding:28px 16px 42px}
+      .simple-brand{margin-bottom:28px}
+      .simple-brand svg{width:126px;height:126px}
+      .simple-brand h1{font-size:23px}
+      .simple-brand p{font-size:11px}
+      .home-menu{grid-template-columns:1fr;gap:12px}
+      .home-menu-btn,.home-menu-btn.full{grid-column:auto;min-height:104px;flex-direction:row;justify-content:flex-start;text-align:left;padding:16px 18px}
+      .home-menu-icon{width:48px;height:48px;border-radius:15px;flex:none;font-size:21px}
+    }
+  </style>
+</head>
+<body class="home-mode">
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <svg class="brand-logo" viewBox="0 0 120 120" aria-label="Florindo Educação">
+        <circle cx="60" cy="60" r="55" fill="#fff" stroke="#f0a31a" stroke-width="4"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#0b456d" stroke-width="7"/>
+        <path d="M30 76V46c0-12 9-21 21-21h24l-7 12H52c-6 0-10 4-10 10v11c8-11 20-18 34-23" fill="#0b456d" opacity=".98"/>
+        <path d="M42 78c7-22 24-36 47-47" fill="none" stroke="#0a98a8" stroke-width="8" stroke-linecap="round"/>
+        <path d="M87 26l20-8-6 21z" fill="#f0a31a"/>
+        <path d="M62 53h28l-6 10H59zm-4 17h30l-6 10H55z" fill="#0a98a8"/>
+      </svg>
+      <div><h1>FLORINDO</h1><p>EDUCAÇÃO</p></div>
+    </div>
+    <nav class="nav" id="desktopNav">
+      <button class="nav-btn active" data-view="home"><span class="nav-icon">⌂</span>Início</button>
+      <button class="nav-btn" data-view="attendance"><span class="nav-icon">✓</span>Chamada</button>
+      <button class="nav-btn" data-view="grades"><span class="nav-icon">A+</span>Notas</button>
+      <button class="nav-btn" data-view="occurrences"><span class="nav-icon">!</span>Ocorrências</button>
+      <button class="nav-btn" data-view="reports"><span class="nav-icon">▤</span>Relatórios</button>
+      <button class="nav-btn" data-view="coordination"><span class="nav-icon">★</span>Coordenação</button>
+    </nav>
+    <div class="sidebar-foot"><b>Protótipo funcional</b><br>Os dados deste arquivo são salvos somente neste navegador. A próxima etapa poderá usar Supabase para login, permissões e banco de dados central.</div>
+  </aside>
+
+  <section class="content">
+    <header class="topbar">
+      <div class="topbar-title"><strong id="pageTitle">Painel do Professor</strong><span id="pageSubtitle">Diário de classe • protótipo local</span></div>
+      <div class="profile"><span class="pill">● PROTÓTIPO</span><div class="avatar">PF</div><div class="profile-text"><b>Professor Demo</b><span class="muted">Acesso temporário a todas as turmas</span></div></div>
+    </header>
+
+    <main>
+      <section class="view active" id="view-home">
+        <div class="simple-home">
+          <div class="simple-brand" aria-label="Florindo Educação">
+            <svg viewBox="0 0 240 240" role="img" aria-label="Logo Florindo Educação">
+              <circle cx="120" cy="120" r="108" fill="#fff" stroke="#f0a31a" stroke-width="7"/>
+              <circle cx="120" cy="120" r="98" fill="none" stroke="#0b456d" stroke-width="12"/>
+              <path d="M60 154V91c0-24 18-42 42-42h49l-14 24h-33c-12 0-20 8-20 20v23c17-23 41-38 70-50" fill="#0b456d"/>
+              <path d="M84 158c14-44 48-71 93-95" fill="none" stroke="#0a98a8" stroke-width="16" stroke-linecap="round"/>
+              <path d="M177 53l40-16-12 42z" fill="#f0a31a"/>
+              <path d="M124 105h55l-12 20h-51zm-8 34h60l-12 20h-57z" fill="#0a98a8"/>
+            </svg>
+            <h1>FLORINDO</h1>
+            <p>EDUCAÇÃO</p>
+          </div>
+
+          <div class="home-menu">
+            <button class="home-menu-btn" onclick="goView('attendance')"><span class="home-menu-icon">✓</span><span>Chamada</span></button>
+            <button class="home-menu-btn gold" onclick="goView('grades')"><span class="home-menu-icon">A+</span><span>Notas</span></button>
+            <button class="home-menu-btn dangerish" onclick="goView('occurrences')"><span class="home-menu-icon">!</span><span>Ocorrências</span></button>
+            <button class="home-menu-btn navy" onclick="goView('reports')"><span class="home-menu-icon">▤</span><span>Relatórios</span></button>
+            <button class="home-menu-btn full" onclick="goView('coordination')"><span class="home-menu-icon">★</span><span>Coordenação</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-attendance">
+        <div class="section-head"><div><h3>Chamada / Frequência</h3><p>A mesma chamada pode ser salva de uma vez para várias aulas do mesmo dia.</p></div></div>
+        <div class="card mb">
+          <div class="toolbar">
+            <div class="field"><label>Turma</label><select id="attClass" onchange="loadAttendanceStudents()"></select></div>
+            <div class="field"><label>Data</label><input id="attDate" type="date" class="input" onchange="loadAttendanceStudents()"></div>
+            <div class="field grow"><label>Aulas</label><div class="lesson-pills" id="lessonPills"></div></div>
+            <div class="field"><label>&nbsp;</label><button class="btn ghost" onclick="loadAttendanceStudents()">Carregar registro</button></div>
+          </div>
+          <div class="notice info mt">Marque as aulas desejadas. Ao salvar, a presença/falta de cada aluno será aplicada a todas as aulas selecionadas.</div>
+        </div>
+        <div class="card">
+          <div class="toolbar mb"><button class="btn success small" onclick="markAllAttendance('P')">Todos presentes</button><button class="btn danger small" onclick="markAllAttendance('F')">Todos ausentes</button><span class="muted" id="attSummary"></span><div style="margin-left:auto"><button class="btn primary" onclick="saveAttendance()">Salvar chamada</button></div></div>
+          <div class="table-wrap"><table class="table"><thead><tr><th style="width:70px">Nº</th><th>Aluno</th><th style="width:210px">Situação</th></tr></thead><tbody id="attendanceBody"></tbody></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-grades">
+        <div class="section-head"><div><h3>Notas e atividades</h3><p>Crie quantas atividades quiser e acompanhe a média automaticamente.</p></div><button class="btn primary" onclick="openActivityModal()">+ Nova atividade</button></div>
+        <div class="card mb"><div class="toolbar"><div class="field"><label>Turma</label><select id="gradeClass" onchange="renderActivities()"></select></div><div class="notice info grow">A média geral do aluno considera as atividades lançadas para a turma, convertidas proporcionalmente para escala 0–10.</div></div></div>
+        <div class="split">
+          <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><b style="color:var(--navy)">Atividades</b><span class="badge blue" id="activityCount">0</span></div><div id="activityList" class="activity-list"></div></div>
+          <div class="card" id="gradeEditor"><div class="empty"><strong>Selecione ou crie uma atividade</strong>As notas dos 32 alunos aparecerão aqui.</div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-occurrences">
+        <div class="section-head"><div><h3>Registro de ocorrências</h3><p>As ocorrências ficam disponíveis no painel da coordenação.</p></div></div>
+        <div class="grid cards-2">
+          <div class="card">
+            <div class="toolbar"><div class="field"><label>Turma</label><select id="occClass" onchange="populateStudentSelect('occClass','occStudent')"></select></div><div class="field grow"><label>Aluno</label><select id="occStudent"></select></div></div>
+            <div class="toolbar mt"><div class="field"><label>Data</label><input type="date" class="input" id="occDate"></div><div class="field grow"><label>Tipo</label><select id="occType"><option>Comportamento</option><option>Pedagógica</option><option>Atraso / frequência</option><option>Convivência</option><option>Material / tarefa</option><option>Outro</option></select></div></div>
+            <div class="field mt"><label>Descrição da ocorrência</label><textarea id="occDescription" placeholder="Descreva de forma objetiva o que ocorreu..."></textarea></div>
+            <div class="notice mt">Ao registrar, a ocorrência será marcada como <b>Enviada à coordenação</b>. Na versão com login, somente professores da turma poderão registrar e somente perfis autorizados poderão consultar o painel completo.</div>
+            <button class="btn primary mt" onclick="saveOccurrence()">Registrar ocorrência</button>
+          </div>
+          <div class="card"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px"><b style="color:var(--navy)">Ocorrências recentes</b><span class="badge orange" id="occRecentCount">0</span></div><div id="occRecent"></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-reports">
+        <div class="section-head"><div><h3>Relatório individual do aluno</h3><p>Visão resumida para acompanhamento pedagógico e reunião com responsáveis.</p></div></div>
+        <div class="card mb"><div class="toolbar"><div class="field"><label>Turma</label><select id="repClass" onchange="populateStudentSelect('repClass','repStudent'); renderStudentReport()"></select></div><div class="field grow"><label>Aluno</label><select id="repStudent" onchange="renderStudentReport()"></select></div></div></div>
+        <div id="studentReport"></div>
+      </section>
+
+      <section class="view" id="view-coordination">
+        <div class="section-head"><div><h3>Painel da Coordenação</h3><p>Demonstração do futuro perfil administrador. Aqui aparecem ocorrências de todas as turmas.</p></div><span class="pill">ACESSO ADMIN • DEMO</span></div>
+        <div class="card mb"><div class="toolbar"><div class="field"><label>Turma</label><select id="coordClass" onchange="renderCoordination()"><option value="">Todas as turmas</option></select></div><div class="field"><label>Status</label><select id="coordStatus" onchange="renderCoordination()"><option value="">Todos</option><option>Enviada à coordenação</option><option>Em acompanhamento</option><option>Resolvida</option></select></div><div class="field grow"><label>Busca</label><input id="coordSearch" class="input" placeholder="Aluno ou descrição..." oninput="renderCoordination()"></div></div></div>
+        <div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Data</th><th>Turma</th><th>Aluno</th><th>Tipo</th><th>Descrição</th><th>Status</th><th>Ação</th></tr></thead><tbody id="coordBody"></tbody></table></div></div>
+      </section>
+    </main>
+  </section>
+</div>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="active" data-view="home"><span class="mi">⌂</span>Início</button>
+  <button data-view="attendance"><span class="mi">✓</span>Chamada</button>
+  <button data-view="grades"><span class="mi">A+</span>Notas</button>
+  <button data-view="occurrences"><span class="mi">!</span>Ocorr.</button>
+  <button data-view="reports"><span class="mi">▤</span>Relat.</button>
+  <button data-view="coordination"><span class="mi">★</span>Coord.</button>
+</div>
+
+<div class="modal-backdrop" id="activityModal">
+  <div class="modal">
+    <div class="modal-head"><h4>Nova atividade avaliativa</h4><button class="btn ghost small" onclick="closeModal('activityModal')">Fechar</button></div>
+    <div class="modal-body">
+      <div class="grid cards-2"><div class="field"><label>Turma</label><select id="actClass"></select></div><div class="field"><label>Data</label><input type="date" class="input" id="actDate"></div></div>
+      <div class="field mt"><label>Título da atividade</label><input class="input" id="actTitle" placeholder="Ex.: Trabalho sobre Grécia Antiga"></div>
+      <div class="field mt"><label>Descrição breve</label><textarea id="actDescription" placeholder="O que foi realizado? Conteúdo, formato, objetivo..."></textarea></div>
+      <div class="field mt" style="max-width:220px"><label>Valor máximo</label><input type="number" step="0.1" min="0.1" class="input" id="actMax" value="10"></div>
+    </div>
+    <div class="modal-foot"><button class="btn ghost" onclick="closeModal('activityModal')">Cancelar</button><button class="btn primary" onclick="createActivity()">Criar atividade</button></div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="occurrenceDetailModal"><div class="modal"><div class="modal-head"><h4>Detalhes da ocorrência</h4><button class="btn ghost small" onclick="closeModal('occurrenceDetailModal')">Fechar</button></div><div class="modal-body" id="occurrenceDetail"></div><div class="modal-foot"><button class="btn ghost" onclick="closeModal('occurrenceDetailModal')">Voltar</button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+  const STORAGE_KEY='florindo_diario_prototipo_v1';
+  const GRADE_DEFS=[
+    {id:'1EF',label:'1º Ano EF',segment:'Fundamental I'},{id:'2EF',label:'2º Ano EF',segment:'Fundamental I'},{id:'3EF',label:'3º Ano EF',segment:'Fundamental I'},{id:'4EF',label:'4º Ano EF',segment:'Fundamental I'},{id:'5EF',label:'5º Ano EF',segment:'Fundamental I'},
+    {id:'6EF',label:'6º Ano EF',segment:'Fundamental II'},{id:'7EF',label:'7º Ano EF',segment:'Fundamental II'},{id:'8EF',label:'8º Ano EF',segment:'Fundamental II'},{id:'9EF',label:'9º Ano EF',segment:'Fundamental II'},
+    {id:'1EM',label:'1ª Série EM',segment:'Ensino Médio'},{id:'2EM',label:'2ª Série EM',segment:'Ensino Médio'},{id:'3EM',label:'3ª Série EM',segment:'Ensino Médio'}
+  ];
+  const SECTIONS=['A','B','C'];
+  const CLASSROOMS=[];
+  GRADE_DEFS.forEach(g=>SECTIONS.forEach(sec=>{
+    const id=g.id+sec;
+    CLASSROOMS.push({id,label:`${g.label} • ${sec}`,short:`${g.label} ${sec}`,segment:g.segment,students:Array.from({length:32},(_,i)=>({id:`${id}-S${String(i+1).padStart(2,'0')}`,name:`Aluno ${i+1}`,number:i+1}))});
+  }));
+  let db=loadDB();
+  let currentActivityId=null;
+  let attendanceState={};
+
+  function loadDB(){
+    try{const raw=localStorage.getItem(STORAGE_KEY); if(raw)return JSON.parse(raw);}catch(e){}
+    return {attendance:{},activities:{},occurrences:[]};
+  }
+  function saveDB(){localStorage.setItem(STORAGE_KEY,JSON.stringify(db));refreshStats();}
+  function today(){return new Date().toISOString().slice(0,10)}
+  function uid(prefix='id'){return prefix+'_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,8)}
+  function classById(id){return CLASSROOMS.find(c=>c.id===id)}
+  function studentById(classId,studentId){const c=classById(classId);return c?c.students.find(s=>s.id===studentId):null}
+  function esc(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+  function fmtDate(d){if(!d)return '—'; const [y,m,day]=d.split('-');return `${day}/${m}/${y}`}
+  function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),2400)}
+  function closeModal(id){document.getElementById(id).classList.remove('show')}
+
+  const titles={home:['Painel do Professor','Diário de classe • protótipo local'],attendance:['Chamada / Frequência','Selecione turma, data e aulas'],grades:['Notas e Atividades','Avaliações, notas e médias'],occurrences:['Ocorrências','Registro por aluno e envio à coordenação'],reports:['Relatórios','Acompanhamento individual do aluno'],coordination:['Coordenação','Visão administrativa • demonstração']};
+  function goView(view){
+    document.body.classList.toggle('home-mode', view==='home');
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById('view-'+view).classList.add('active');
+    document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
+    document.getElementById('pageTitle').textContent=titles[view][0];document.getElementById('pageSubtitle').textContent=titles[view][1];
+    if(view==='home'){renderHomeClasses();refreshStats()} if(view==='attendance')loadAttendanceStudents(); if(view==='grades')renderActivities(); if(view==='occurrences')renderRecentOccurrences(); if(view==='reports')renderStudentReport(); if(view==='coordination')renderCoordination();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>goView(b.dataset.view)));
+
+  function populateClassSelect(id,includeAll=false){const el=document.getElementById(id);if(!el)return;const selected=el.value;el.innerHTML=includeAll?'<option value="">Todas as turmas</option>':'';let lastSeg='';CLASSROOMS.forEach(c=>{if(c.segment!==lastSeg){const og=document.createElement('optgroup');og.label=c.segment;el.appendChild(og);lastSeg=c.segment}const opt=document.createElement('option');opt.value=c.id;opt.textContent=c.label;el.lastElementChild.tagName==='OPTGROUP'?el.lastElementChild.appendChild(opt):el.appendChild(opt)});if(selected&&CLASSROOMS.some(c=>c.id===selected))el.value=selected;}
+  function populateStudentSelect(classSelectId,studentSelectId){const cid=document.getElementById(classSelectId).value;const el=document.getElementById(studentSelectId);const c=classById(cid);el.innerHTML=(c?c.students:[]).map(s=>`<option value="${s.id}">${String(s.number).padStart(2,'0')} • ${s.name}</option>`).join('');}
+
+  function init(){
+    ['attClass','gradeClass','occClass','repClass','actClass'].forEach(id=>populateClassSelect(id));populateClassSelect('coordClass',true);
+    document.getElementById('attDate').value=today();document.getElementById('occDate').value=today();document.getElementById('actDate').value=today();
+    const lp=document.getElementById('lessonPills');lp.innerHTML=Array.from({length:6},(_,i)=>`<label class="lesson-pill"><input type="checkbox" value="${i+1}" ${i===0?'checked':''} onchange="loadAttendanceStudents()"><span>Aula ${i+1}</span></label>`).join('');
+    populateStudentSelect('occClass','occStudent');populateStudentSelect('repClass','repStudent');
+    renderHomeClasses();refreshStats();loadAttendanceStudents();renderActivities();renderRecentOccurrences();renderStudentReport();renderCoordination();
+  }
+
+  function refreshStats(){
+    document.getElementById('statClasses').textContent=CLASSROOMS.length;
+    document.getElementById('statStudents').textContent=(CLASSROOMS.length*32).toLocaleString('pt-BR');
+    document.getElementById('statActivities').textContent=Object.values(db.activities||{}).reduce((a,b)=>a+b.length,0);
+    document.getElementById('statOccurrences').textContent=(db.occurrences||[]).length;
+  }
+  function renderHomeClasses(){
+    const q=(document.getElementById('homeClassSearch').value||'').toLowerCase();
+    const list=CLASSROOMS.filter(c=>(c.label+' '+c.segment).toLowerCase().includes(q));
+    document.getElementById('homeClassGrid').innerHTML=list.map(c=>`<div class="class-card" onclick="openClass('${c.id}')"><b>${esc(c.label)}</b><span>${esc(c.segment)} • 32 alunos</span></div>`).join('');
+  }
+  function openClass(cid){document.getElementById('attClass').value=cid;goView('attendance')}
+
+  function selectedLessons(){return [...document.querySelectorAll('#lessonPills input:checked')].map(i=>i.value)}
+  function attendanceKey(cid,date,lesson){return `${cid}|${date}|L${lesson}`}
+  function loadAttendanceStudents(){
+    const cid=document.getElementById('attClass').value;const date=document.getElementById('attDate').value;const lessons=selectedLessons();const c=classById(cid); if(!c)return;
+    attendanceState={};let base={};if(date&&lessons.length){const rec=db.attendance[attendanceKey(cid,date,lessons[0])];if(rec&&rec.statuses)base=rec.statuses}
+    c.students.forEach(s=>attendanceState[s.id]=base[s.id]||'P');renderAttendanceTable();
+  }
+  function renderAttendanceTable(){const cid=document.getElementById('attClass').value;const c=classById(cid);if(!c)return;document.getElementById('attendanceBody').innerHTML=c.students.map(s=>`<tr><td>${String(s.number).padStart(2,'0')}</td><td class="student-name">${esc(s.name)}</td><td><div class="status-toggle"><button class="status-btn present ${attendanceState[s.id]==='P'?'active':''}" onclick="setAttendance('${s.id}','P')">Presente</button><button class="status-btn absent ${attendanceState[s.id]==='F'?'active':''}" onclick="setAttendance('${s.id}','F')">Falta</button></div></td></tr>`).join('');const p=Object.values(attendanceState).filter(x=>x==='P').length;document.getElementById('attSummary').textContent=`${p} presentes • ${c.students.length-p} faltas`;}
+  function setAttendance(sid,status){attendanceState[sid]=status;renderAttendanceTable()}
+  function markAllAttendance(status){Object.keys(attendanceState).forEach(k=>attendanceState[k]=status);renderAttendanceTable()}
+  function saveAttendance(){
+    const cid=document.getElementById('attClass').value,date=document.getElementById('attDate').value,lessons=selectedLessons();if(!date)return toast('Escolha a data.');if(!lessons.length)return toast('Selecione pelo menos uma aula.');
+    lessons.forEach(l=>db.attendance[attendanceKey(cid,date,l)]={classId:cid,date,lesson:Number(l),statuses:{...attendanceState},savedAt:new Date().toISOString()});saveDB();toast(`Chamada salva para ${lessons.length} aula(s).`);
+  }
+
+  function activitiesFor(cid){return (db.activities[cid]||[]).sort((a,b)=>(b.date||'').localeCompare(a.date||''))}
+  function openActivityModal(){document.getElementById('actClass').value=document.getElementById('gradeClass').value;document.getElementById('actDate').value=today();document.getElementById('actTitle').value='';document.getElementById('actDescription').value='';document.getElementById('actMax').value='10';document.getElementById('activityModal').classList.add('show')}
+  function createActivity(){
+    const cid=document.getElementById('actClass').value,title=document.getElementById('actTitle').value.trim(),desc=document.getElementById('actDescription').value.trim(),date=document.getElementById('actDate').value,max=Number(document.getElementById('actMax').value);
+    if(!title)return toast('Digite o título da atividade.');if(!date)return toast('Escolha a data.');if(!max||max<=0)return toast('Informe um valor máximo válido.');
+    const act={id:uid('act'),classId:cid,title,description:desc,date,maxScore:max,scores:{},createdAt:new Date().toISOString()};db.activities[cid]=db.activities[cid]||[];db.activities[cid].push(act);saveDB();document.getElementById('gradeClass').value=cid;currentActivityId=act.id;closeModal('activityModal');renderActivities();toast('Atividade criada.');
+  }
+  function renderActivities(){
+    const cid=document.getElementById('gradeClass').value;const acts=activitiesFor(cid);document.getElementById('activityCount').textContent=acts.length;
+    if(currentActivityId&&!acts.some(a=>a.id===currentActivityId))currentActivityId=null;if(!currentActivityId&&acts.length)currentActivityId=acts[0].id;
+    document.getElementById('activityList').innerHTML=acts.length?acts.map(a=>`<div class="activity-item ${a.id===currentActivityId?'active':''}" onclick="selectActivity('${a.id}')"><b>${esc(a.title)}</b><small>${fmtDate(a.date)} • valor ${String(a.maxScore).replace('.',',')}</small></div>`).join(''):`<div class="empty"><strong>Nenhuma atividade</strong>Crie a primeira avaliação desta turma.</div>`;
+    renderGradeEditor();
+  }
+  function selectActivity(id){currentActivityId=id;renderActivities()}
+  function findActivity(cid,id){return (db.activities[cid]||[]).find(a=>a.id===id)}
+  function renderGradeEditor(){
+    const cid=document.getElementById('gradeClass').value;const act=findActivity(cid,currentActivityId);const c=classById(cid);const box=document.getElementById('gradeEditor');if(!act||!c){box.innerHTML='<div class="empty"><strong>Selecione ou crie uma atividade</strong>As notas dos 32 alunos aparecerão aqui.</div>';return}
+    const scores=c.students.map(s=>Number(act.scores[s.id])).filter(n=>Number.isFinite(n));const avg=scores.length?scores.reduce((a,b)=>a+b,0)/scores.length:0;
+    box.innerHTML=`<div style="display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap"><div><h3 style="margin:0;color:var(--navy)">${esc(act.title)}</h3><div class="muted" style="font-size:12px;margin-top:4px">${fmtDate(act.date)} • Valor máximo ${act.maxScore}</div><p class="muted" style="font-size:12px;max-width:760px">${esc(act.description||'Sem descrição.')}</p></div><div class="right"><span class="badge blue">Média da atividade</span><div style="font-size:24px;font-weight:850;color:var(--navy);margin-top:5px">${avg.toFixed(2).replace('.',',')} / ${act.maxScore}</div></div></div><div class="toolbar mb"><button class="btn primary small" onclick="saveScores()">Salvar notas</button><button class="btn danger small" onclick="deleteActivity()">Excluir atividade</button><span class="muted">Digite apenas valores de 0 a ${act.maxScore}.</span></div><div class="table-wrap"><table class="table"><thead><tr><th>Nº</th><th>Aluno</th><th>Nota</th><th>Média geral (0–10)</th></tr></thead><tbody>${c.students.map(s=>{const value=act.scores[s.id]??'';return `<tr><td>${String(s.number).padStart(2,'0')}</td><td class="student-name">${esc(s.name)}</td><td><input id="score_${s.id}" class="score" type="number" min="0" max="${act.maxScore}" step="0.1" value="${value}" oninput="validateScore(this,${act.maxScore})"></td><td><b>${studentAverage(cid,s.id).toFixed(2).replace('.',',')}</b></td></tr>`}).join('')}</tbody></table></div>`;
+  }
+  function validateScore(input,max){const v=input.value===''?null:Number(input.value);input.classList.toggle('invalid',v!==null&&(!Number.isFinite(v)||v<0||v>max))}
+  function saveScores(){const cid=document.getElementById('gradeClass').value,act=findActivity(cid,currentActivityId),c=classById(cid);if(!act||!c)return;let bad=false;c.students.forEach(s=>{const input=document.getElementById('score_'+s.id);const raw=input.value.trim();if(raw===''){delete act.scores[s.id];return}const v=Number(raw);if(!Number.isFinite(v)||v<0||v>act.maxScore){bad=true;input.classList.add('invalid')}else act.scores[s.id]=v});if(bad)return toast('Há notas fora do intervalo permitido.');saveDB();renderGradeEditor();toast('Notas salvas.')}
+  function deleteActivity(){const cid=document.getElementById('gradeClass').value,act=findActivity(cid,currentActivityId);if(!act)return;if(!confirm(`Excluir a atividade "${act.title}"?`))return;db.activities[cid]=(db.activities[cid]||[]).filter(a=>a.id!==act.id);currentActivityId=null;saveDB();renderActivities();toast('Atividade excluída.')}
+  function studentAverage(cid,sid){const acts=(db.activities[cid]||[]);const vals=[];acts.forEach(a=>{const v=Number(a.scores[sid]);if(Number.isFinite(v)&&a.maxScore>0)vals.push((v/a.maxScore)*10)});return vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:0}
+
+  function saveOccurrence(){
+    const cid=document.getElementById('occClass').value,sid=document.getElementById('occStudent').value,date=document.getElementById('occDate').value,type=document.getElementById('occType').value,description=document.getElementById('occDescription').value.trim();if(!date)return toast('Escolha a data.');if(!description)return toast('Descreva a ocorrência.');
+    db.occurrences.push({id:uid('occ'),classId:cid,studentId:sid,date,type,description,status:'Enviada à coordenação',author:'Professor Demo',createdAt:new Date().toISOString()});document.getElementById('occDescription').value='';saveDB();renderRecentOccurrences();toast('Ocorrência registrada e enviada à coordenação.');
+  }
+  function renderRecentOccurrences(){const cid=document.getElementById('occClass').value;const all=[...db.occurrences].filter(o=>!cid||o.classId===cid).sort((a,b)=>(b.createdAt||'').localeCompare(a.createdAt||'')).slice(0,8);document.getElementById('occRecentCount').textContent=all.length;document.getElementById('occRecent').innerHTML=all.length?all.map(o=>{const c=classById(o.classId),s=studentById(o.classId,o.studentId);return `<div class="mini-row"><div><b style="font-size:12px;color:var(--navy)">${esc(s?s.name:'Aluno')}</b><div class="muted" style="font-size:11px">${esc(c?c.label:o.classId)} • ${fmtDate(o.date)} • ${esc(o.type)}</div></div><button class="btn ghost small" onclick="showOccurrence('${o.id}')">Ver</button></div>`}).join(''):`<div class="empty"><strong>Nenhuma ocorrência</strong>Os registros desta turma aparecerão aqui.</div>`}
+  function showOccurrence(id){const o=db.occurrences.find(x=>x.id===id);if(!o)return;const c=classById(o.classId),s=studentById(o.classId,o.studentId);document.getElementById('occurrenceDetail').innerHTML=`<div class="grid cards-2"><div><span class="badge gray">Aluno</span><h3 style="margin:6px 0;color:var(--navy)">${esc(s?s.name:'Aluno')}</h3><div class="muted">${esc(c?c.label:o.classId)}</div></div><div><span class="badge orange">${esc(o.status)}</span><h3 style="margin:6px 0;color:var(--navy)">${fmtDate(o.date)}</h3><div class="muted">${esc(o.type)}</div></div></div><div class="notice mt">${esc(o.description)}</div><div class="muted mt" style="font-size:11px">Registrado por ${esc(o.author||'Professor')}.</div>`;document.getElementById('occurrenceDetailModal').classList.add('show')}
+
+  function absenceCount(cid,sid){let n=0;Object.values(db.attendance).forEach(r=>{if(r.classId===cid&&r.statuses&&r.statuses[sid]==='F')n++});return n}
+  function attendanceCount(cid,sid){let n=0;Object.values(db.attendance).forEach(r=>{if(r.classId===cid&&r.statuses&&r.statuses[sid])n++});return n}
+  function renderStudentReport(){
+    const cid=document.getElementById('repClass').value,sid=document.getElementById('repStudent').value,c=classById(cid),s=studentById(cid,sid);const box=document.getElementById('studentReport');if(!c||!s){box.innerHTML='';return}const avg=studentAverage(cid,sid),abs=absenceCount(cid,sid),att=attendanceCount(cid,sid);const occ=db.occurrences.filter(o=>o.classId===cid&&o.studentId===sid).sort((a,b)=>(b.date||'').localeCompare(a.date||''));const acts=activitiesFor(cid);
+    box.innerHTML=`<div class="grid stats"><div class="stat-card"><div class="stat-label">Aluno</div><div class="stat-value" style="font-size:21px">${esc(s.name)}</div><div class="stat-foot">${esc(c.label)} • nº ${s.number}</div></div><div class="stat-card"><div class="stat-label">Média geral</div><div class="stat-value">${avg.toFixed(2).replace('.',',')}</div><div class="stat-foot">Escala padronizada 0–10</div></div><div class="stat-card"><div class="stat-label">Faltas registradas</div><div class="stat-value">${abs}</div><div class="stat-foot">Em ${att} aula(s) com chamada</div></div><div class="stat-card"><div class="stat-label">Ocorrências</div><div class="stat-value">${occ.length}</div><div class="stat-foot">Histórico deste aluno</div></div></div><div class="grid cards-2 mt"><div class="card"><h3 style="margin-top:0;color:var(--navy)">Notas por atividade</h3>${acts.length?acts.map(a=>{const v=a.scores[sid];return `<div class="mini-row"><div><b style="font-size:12px">${esc(a.title)}</b><div class="muted" style="font-size:11px">${fmtDate(a.date)} • valor ${a.maxScore}</div></div><div><b>${v===undefined?'—':String(v).replace('.',',')}</b></div></div>`}).join(''):'<div class="empty">Nenhuma nota lançada.</div>'}</div><div class="card"><h3 style="margin-top:0;color:var(--navy)">Ocorrências</h3>${occ.length?occ.map(o=>`<div class="mini-row"><div><b style="font-size:12px">${fmtDate(o.date)} • ${esc(o.type)}</b><div class="muted" style="font-size:11px">${esc(o.description)}</div></div><span class="badge ${o.status==='Resolvida'?'green':'orange'}">${esc(o.status)}</span></div>`).join(''):'<div class="empty">Nenhuma ocorrência registrada.</div>'}</div></div>`;
+  }
+
+  function renderCoordination(){
+    const cid=document.getElementById('coordClass').value,status=document.getElementById('coordStatus').value,q=(document.getElementById('coordSearch').value||'').toLowerCase();let list=[...db.occurrences].sort((a,b)=>(b.createdAt||'').localeCompare(a.createdAt||''));if(cid)list=list.filter(o=>o.classId===cid);if(status)list=list.filter(o=>o.status===status);if(q)list=list.filter(o=>{const c=classById(o.classId),s=studentById(o.classId,o.studentId);return `${s?s.name:''} ${c?c.label:''} ${o.description} ${o.type}`.toLowerCase().includes(q)});
+    document.getElementById('coordBody').innerHTML=list.length?list.map(o=>{const c=classById(o.classId),s=studentById(o.classId,o.studentId);return `<tr><td>${fmtDate(o.date)}</td><td>${esc(c?c.label:o.classId)}</td><td class="student-name">${esc(s?s.name:'Aluno')}</td><td>${esc(o.type)}</td><td style="max-width:340px">${esc(o.description)}</td><td><span class="badge ${o.status==='Resolvida'?'green':o.status==='Em acompanhamento'?'blue':'orange'}">${esc(o.status)}</span></td><td><select style="min-width:145px" onchange="updateOccurrenceStatus('${o.id}',this.value)"><option ${o.status==='Enviada à coordenação'?'selected':''}>Enviada à coordenação</option><option ${o.status==='Em acompanhamento'?'selected':''}>Em acompanhamento</option><option ${o.status==='Resolvida'?'selected':''}>Resolvida</option></select></td></tr>`}).join(''):`<tr><td colspan="7"><div class="empty"><strong>Nenhuma ocorrência encontrada</strong>Ajuste os filtros ou registre uma ocorrência.</div></td></tr>`;
+  }
+  function updateOccurrenceStatus(id,status){const o=db.occurrences.find(x=>x.id===id);if(!o)return;o.status=status;saveDB();renderCoordination();renderRecentOccurrences();renderStudentReport();toast('Status atualizado.')}
+
+  document.getElementById('occClass').addEventListener('change',renderRecentOccurrences);
+  document.getElementById('activityModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal('activityModal')});
+  document.getElementById('occurrenceDetailModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal('occurrenceDetailModal')});
+  init();
+</script>
+</body>
+</html>
