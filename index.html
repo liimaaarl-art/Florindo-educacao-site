@@ -2,167 +2,99 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#07182a">
-  <meta name="description" content="Florindo Sistemas — sistemas personalizados, aplicativos, automações, IA e soluções digitais para empresas, com especialidade em educação e saúde.">
-  <title>Florindo Sistemas | Tecnologia que impulsiona sua gestão</title>
-  <link rel="icon" href="assets/logo-florindo.svg">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="media-whatsapp.css">
-<style>
-/* Florindo Sistemas: responsive brand refresh */
-:root{--blue-400:#62d9d0;--blue-500:#54d1c8;--muted:#a9bdc9}
-html{scroll-padding-top:94px}
-body{background:#f6f8f8}
-.site-header,.site-header.scrolled{background:#082731;border-bottom:1px solid #ffffff12;backdrop-filter:none}
-.nav-wrap{height:82px}.brand img{object-fit:contain;box-shadow:none}
-.nav-cta{border-radius:7px}.hero-slider{height:auto;min-height:0;background:#082731;overflow:hidden;padding:150px 0 0}
-.new-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;padding-bottom:76px}
-.hero-intro .section-label{font-size:11px;letter-spacing:.12em}
-.hero-intro h1{font-size:clamp(42px,5.5vw,72px);line-height:1.06;letter-spacing:-.05em;font-weight:650;margin:26px 0}
-.hero-intro h1 em{font-style:normal;color:#71ded3}
-.hero-intro>p{font-size:17px;line-height:1.7;color:#c1d1d6;max-width:480px}
-.hero-actions{align-items:center;gap:20px;margin-top:30px}.btn{border-radius:7px;font-size:14px;font-weight:750;min-height:52px}
-.btn-primary{background:#7ce5d7;box-shadow:none;color:#082731}
-.hero-secondary{font-size:13px;border-bottom:1px solid #739297;padding-bottom:4px}
-.hero-note{display:flex;align-items:center;gap:8px;color:#9eb6bf;font-size:11px;margin-top:28px}
-.hero-note>span{width:6px;height:6px;border-radius:50%;background:#7ce5d7;flex-shrink:0}
-.platform-illustration{background:#f5f8f9;color:#153945;border-radius:14px;box-shadow:0 24px 70px #0003;border:1px solid #ffffff40;overflow:hidden;transform:rotate(-2deg)}
-.platform-top{padding:18px 22px;display:flex;align-items:center;gap:20px;border-bottom:1px solid #dce6e9;background:white;font-size:11px}
-.platform-top strong{font-size:12px;letter-spacing:.05em;margin-right:auto}.platform-top small{display:block;font-size:7px;letter-spacing:.25em}
-.platform-top i{font-style:normal;border-radius:50%;background:#e2f2ef;padding:5px 10px}
-.platform-body{padding:25px}.platform-heading>span{font-size:8px;letter-spacing:.15em;color:#68808a}.platform-heading h2{font-size:26px;letter-spacing:-.04em;margin:8px 0}.platform-heading p{font-size:11px;color:#68808a;margin:0 0 22px}
-.platform-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.platform-stats>div{background:white;border:1px solid #e1e9ec;padding:16px;border-radius:8px}
-.platform-stats span,.platform-stats small{display:block;font-size:10px;color:#69808b}.platform-stats b{display:block;font-size:17px;margin:6px 0;font-weight:650}
-.platform-chart{background:white;border:1px solid #e1e9ec;padding:18px;border-radius:8px;margin-top:14px}.platform-chart b{font-size:12px}.platform-chart span{display:block;font-size:9px;color:#68808a;margin:4px 0 18px}.platform-chart svg{width:100%;height:auto}
-.platform-task{display:flex;align-items:center;gap:12px;margin-top:16px;padding:12px;background:#e5f3ef;border-radius:8px}.platform-task>span{color:#07806f}.platform-task b{display:block;font-size:11px}.platform-task small{font-size:9px;color:#55736f}.illustration-caption{font-size:8px;color:#68808a;margin:14px 0 0}
-.sector-strip{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:25px;border-top:1px solid #ffffff20;color:#d0e0e4}.sector-strip>span{font-size:11px;color:#9fb8c1}.sector-strip>b{font-size:14px;font-weight:550}
-.section{padding:88px 0}.solutions,.process-section{background:#f7f9f9;color:#15313c}
-.section-head{gap:40px}.section-head h2,.statement-grid h2,.education-card h2,.contact-section h2{font-size:clamp(30px,3.8vw,48px);line-height:1.12;letter-spacing:-.04em;font-weight:650}
-.section-head>p,.solution-card p,.process-step p{color:#657983}.section-head h2 span{color:#158b86}.section-label{color:#239d97}
-.solutions-grid{gap:16px}.solution-card,.solution-card.featured{border:1px solid #dce6e7;border-radius:12px;background:#fff;box-shadow:none;min-height:0}
-.solution-card:before{display:none}.solution-card:hover{background:#fff;border-color:#4aada6;transform:translateY(-3px)}
-.solution-card h3{font-size:20px}.solution-card a{color:#16827d}.icon-box,.mini-icon{color:#148e88;background:#eaf6f3;border-color:#d3ebe5;border-radius:10px}
-.statement-section{background:#eaf0f0}.statement-quote{border-radius:14px;background:#0b303b;box-shadow:none}.statement-quote p{font-size:23px}
-.education-section{background:#0b303b}.education-card{padding:0;gap:64px;border:0;background:none;border-radius:0}
-.education-visual{min-height:380px;background:#164751;border:1px solid #ffffff18;border-radius:14px;box-shadow:none;padding:28px}
-.education-visual:after{display:none}.education-symbol{display:flex;align-items:start;justify-content:space-between;font-size:140px;font-weight:600;line-height:1;color:#8ae4d3;letter-spacing:-.09em}.education-symbol>span{font-size:75px}
-.education-lines{display:flex;flex-direction:column;margin-top:18px;color:#c8e6e5;font-size:13px}.education-lines>span{border-bottom:1px solid #ffffff18;padding:9px 0}.visual-badge{font-size:11px;background:none;border:0;padding:0;left:28px;bottom:22px;backdrop-filter:none;color:#85c4be}
-.feature-list span{border-radius:6px;font-size:13px}.segments-section{background:#fff}
-.segments-grid{grid-template-columns:repeat(4,1fr)}.segment-photo{grid-column:auto;min-height:280px;border-radius:12px;box-shadow:none;background:#edf4f3!important;border:1px solid #dce8e6}
-.segment-photo:after{display:none}.segment-photo:before{display:block;margin:24px;font-size:40px;font-weight:500;color:#6ca6a0;line-height:1;content:"01"}
-.segment-photo.health:before{content:"02"}.segment-photo.services:before{content:"03"}.segment-photo.retail:before{content:"04"}
-.segment-content{left:24px;right:24px;bottom:24px;color:#153c43}.segment-content>span{color:#198b82;font-size:10px}.segment-content h3{font-size:21px;line-height:1.2;font-weight:600}.segment-content p{font-size:13px;color:#60777b}
-.project-card{border-radius:10px;box-shadow:none}.process-step{border-color:#cfdddd}.process-step b{color:#188980;background:#e3f0ed;border-radius:8px}
-.contact-section{background:#b9ede1;padding:76px 0}.contact-whatsapp{background:#087d55;box-shadow:none}.contact-email{box-shadow:none}
-.site-footer{background:#082731}.footer-brand img{object-fit:contain}
-.floating-whatsapp{height:56px;padding:0 18px;gap:9px;background:#087d55;border:1px solid #ffffff50;box-shadow:0 6px 22px #062d3326;bottom:max(20px,env(safe-area-inset-bottom))}
-.floating-whatsapp .wa-mark,.contact-whatsapp .wa-mark{display:block!important;width:28px;height:28px;flex:0 0 28px;margin:0;background-position:center;background-size:contain}
-.floating-whatsapp>span:last-child{font-size:13px}.reveal{opacity:1;transform:none}
-a:focus-visible,button:focus-visible{outline:3px solid #eab853;outline-offset:5px}
-@media(max-width:980px){
-.new-hero{gap:32px}.main-nav{background:#082731}.segments-grid{grid-template-columns:repeat(2,1fr)}
-.education-card{gap:38px}.education-visual{min-height:380px}.hero-actions{justify-content:flex-start}.hero-actions .btn{width:auto}
-}
-@media(max-width:640px){
-.container{width:calc(100% - 40px)}.nav-wrap{height:72px}.brand img{width:42px;height:42px}.brand-text{font-size:13px}.brand-text small{font-size:8px}.menu-toggle{width:42px;height:42px;border-radius:7px}.menu-toggle span{width:21px;height:2px}
-.hero-slider{padding-top:112px;min-height:0;height:auto}.new-hero{grid-template-columns:1fr;gap:38px;padding-bottom:32px}
-.hero-intro .section-label{font-size:9px;letter-spacing:.06em}.hero-intro h1{font-size:clamp(38px,10.8vw,54px);margin:22px 0;line-height:1.07}
-.hero-intro>p{font-size:15px;line-height:1.65}.hero-actions{flex-direction:column;align-items:flex-start;gap:17px;margin-top:24px}.hero-actions .btn{width:100%;font-size:13px}.hero-note{font-size:10px;line-height:1.5;margin-top:22px}
-.platform-illustration{transform:none;border-radius:10px}.platform-body{padding:20px}.platform-heading h2{font-size:24px}.platform-stats>div{padding:12px}.platform-stats b{font-size:15px}
-.sector-strip{flex-wrap:wrap;justify-content:flex-start;gap:14px 22px;padding:22px 0}.sector-strip>span{width:100%;font-size:10px}.sector-strip>b{font-size:12px}
-.section{padding:60px 0}.section-head{margin-bottom:28px}.section-head h2,.statement-grid h2,.education-card h2,.contact-section h2{font-size:32px}
-.education-card{padding:0;gap:30px}.education-visual{min-height:360px}.statement-quote p{font-size:21px}
-.segments-grid{grid-template-columns:1fr}.segment-photo{min-height:250px}.segment-content h3{font-size:23px;max-width:290px}.segment-photo:before{font-size:32px}
-.contact-section{padding:60px 0}.site-footer{padding-bottom:92px}
-.floating-whatsapp{width:54px;height:54px;right:16px;bottom:max(16px,env(safe-area-inset-bottom));padding:0;display:flex;align-items:center;justify-content:center;background:#087d55;border:1px solid #ffffff70}
-.floating-whatsapp>span:last-child{display:none}.floating-whatsapp .wa-mark{display:block!important;width:30px;height:30px;flex-basis:30px}
-}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#072b40">
+  <meta name="description" content="Florindo Sistemas: sistemas personalizados, aplicativos e automações para sua empresa. Tecnologia para educação, saúde, serviços e comércio.">
+  <meta property="og:title" content="Florindo Sistemas | Tecnologia para quem faz acontecer">
+  <meta property="og:description" content="Transforme a rotina do seu negócio com sistemas, aplicativos e automações feitos sob medida.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/business-1536.webp">
+  <title>Florindo Sistemas | Tecnologia para quem faz acontecer</title>
+  <link rel="icon" href="assets/logo-florindo.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/business-1536.webp" imagesrcset="assets/business-768.webp 768w, assets/business-1536.webp 1536w" imagesizes="(max-width: 760px) calc(100vw - 40px), 55vw">
+  <link rel="stylesheet" href="style.css?v=20261011b">
+  <script src="app.js?v=20261011b" defer></script>
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
-    <div class="container nav-wrap">
-      <a class="brand" href="#inicio" aria-label="Florindo Sistemas - início">
-        <img src="assets/logo-florindo.svg" alt="Logo Florindo Sistemas">
-        <span class="brand-text">FLORINDO <small>SISTEMAS</small></span>
-      </a>
-      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
-        <a href="#solucoes">Soluções</a>
-        <a href="#educacao">Educação</a>
-        <a href="#segmentos">Segmentos</a>
-        <a href="#processo">Como trabalhamos</a>
-        <a class="nav-cta" href="#contato">Fale conosco</a>
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 64 64"><path fill="currentColor" stroke="none" d="M46.6 17.8A20.2 20.2 0 0 0 14.8 42.2L12 52l10-2.6A20.3 20.3 0 1 0 46.6 17.8Zm-14.5 30A16.8 16.8 0 0 1 23.6 45l-.6-.3-5.9 1.6 1.6-5.7-.4-.6a16.8 16.8 0 1 1 29.1-11.5 16.7 16.7 0 0 1-15.3 19.3Zm9.2-12.6c-.5-.3-3-1.5-3.5-1.6-.5-.2-.8-.3-1.2.3s-1.3 1.6-1.7 2c-.3.4-.6.4-1.1.1-.5-.2-2.1-.8-4.1-2.5-1.5-1.3-2.5-3-2.8-3.5-.3-.5 0-.8.2-1 .2-.3.5-.6.8-.9.2-.3.3-.5.5-.8.2-.4.1-.7 0-.9-.1-.2-1.2-2.8-1.6-3.9-.4-1-.9-.9-1.2-.9h-1c-.4 0-.9.1-1.4.6-.5.5-1.8 1.8-1.8 4.3 0 2.6 1.9 5 2.1 5.4.3.3 3.7 5.7 9 8 1.3.5 2.2.9 3 1.1 1.3.4 2.4.3 3.3.2 1-.2 3-1.2 3.4-2.4.5-1.2.5-2.2.3-2.4-.1-.2-.5-.3-1.1-.6Z"/></symbol>
+    <symbol id="icon-system" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M7 9h4m-4 4h8"/></symbol>
+    <symbol id="icon-mobile" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 6h4m-3 12h2"/></symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  </defs></svg>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#inicio" aria-label="Florindo Sistemas, início"><img src="assets/logo-florindo.svg" width="48" height="48" alt=""><span>FLORINDO<small>SISTEMAS</small></span></a>
+      <nav id="mainNav" class="main-nav" aria-label="Navegação principal">
+        <a href="#solucoes">Soluções</a><a href="#segmentos">Segmentos</a><a href="#educacao">Educação</a><a href="#sobre">Sobre a Florindo</a><a class="nav-cta" href="#contato">Vamos conversar <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
       </nav>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
-
-  <main>
-    <section class="hero-slider" id="inicio" aria-label="Florindo Sistemas">
-      <div class="container new-hero">
-        <div class="hero-intro">
-          <span class="section-label">Tecnologia sob medida para empresas</span>
-          <h1>Menos tarefas.<br>Mais tempo para<br><em>fazer crescer.</em></h1>
-          <p>Transformamos processos em sistemas simples de usar. Aplicativos, gestão e automações conectados à realidade do seu negócio.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="#contato">Vamos falar do seu projeto <span aria-hidden="true">↗</span></a><a class="hero-secondary" href="#solucoes">Explore nossas soluções →</a></div>
-          <div class="hero-note"><span></span>Atendimento próximo. Desenvolvimento personalizado.</div>
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow light" id="heroLabel">SEU NEGÓCIO. MAIS POSSIBILIDADES.</span>
+          <h1 id="heroTitle">Tecnologia para<br>quem <span>faz acontecer.</span></h1>
+          <p id="heroDescription">Sua empresa tem um jeito próprio de trabalhar. Criamos sistemas, aplicativos e automações que acompanham essa realidade.</p>
+          <div class="hero-actions"><a id="heroCta" class="button button-cyan" href="#contato">Encontre sua solução <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a><a class="secondary-link" href="#solucoes">Conheça a Florindo Sistemas</a></div>
+          <div class="hero-highlights"><span><svg aria-hidden="true"><use href="#icon-check"/></svg>Sob medida</span><span><svg aria-hidden="true"><use href="#icon-check"/></svg>Atendimento próximo</span></div>
         </div>
-        <div class="platform-illustration" role="img" aria-label="Ilustração conceitual de uma plataforma de gestão com agenda, indicadores e processos conectados.">
-          <div class="platform-top"><strong>FLORINDO <small>SISTEMAS</small></strong><span>Visão geral</span><i>F</i></div>
-          <div class="platform-body"><div class="platform-heading"><span>SUA OPERAÇÃO, CONECTADA</span><h2>Clareza para decidir.</h2><p>Tudo o que importa, no mesmo lugar.</p></div>
-          <div class="platform-stats"><div><span>Gestão</span><b>Organizada</b><small>Processos mais simples</small></div><div><span>Equipe</span><b>Conectada</b><small>Informação acessível</small></div></div>
-          <div class="platform-chart"><div><b>Acompanhe a evolução</b><span>Indicadores do seu negócio</span></div><svg viewBox="0 0 420 125" aria-hidden="true"><defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#12a8aa" stop-opacity=".2"/><stop offset="1" stop-color="#12a8aa" stop-opacity="0"/></linearGradient></defs><path d="M0 30H420M0 70H420M0 110H420" stroke="#e3eaee" fill="none"/><path d="M0 106C35 106 45 76 80 82S130 100 165 65S210 80 255 46S320 64 350 29S400 35 420 12V125H0Z" fill="url(#chartFill)"/><path d="M0 106C35 106 45 76 80 82S130 100 165 65S210 80 255 46S320 64 350 29S400 35 420 12" fill="none" stroke="#099b9e" stroke-width="3"/></svg></div>
-          <div class="platform-task"><span>✓</span><div><b>Rotinas em sintonia</b><small>Clientes · Agenda · Financeiro · Relatórios</small></div></div>
-          <p class="illustration-caption">Ilustração de possibilidades. Cada projeto é feito sob medida.</p></div>
+        <div class="hero-visual">
+          <img id="heroImage" src="assets/business-1536.webp" srcset="assets/business-768.webp 768w, assets/business-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 55vw" width="1536" height="1024" fetchpriority="high" alt="Profissionais trabalhando juntos com um notebook em um escritório.">
+          <div class="image-label"><span class="status-dot"></span><span id="heroImageLabel">Pessoas no centro. Tecnologia a favor.</span></div>
         </div>
       </div>
-      <div class="container sector-strip"><span>Um parceiro para diferentes negócios</span><b>Educação</b><b>Saúde</b><b>Serviços</b><b>Comércio</b></div>
+      <div class="container hero-bottom">
+        <span class="hero-bottom-label">TECNOLOGIA QUE ACOMPANHA VOCÊ</span>
+        <div class="hero-switcher" role="group" aria-label="Escolha um destaque"><button type="button" class="active" aria-pressed="true" data-hero="business">Negócios</button><button type="button" aria-pressed="false" data-hero="education">Educação</button><button type="button" aria-pressed="false" data-hero="health">Saúde</button></div>
+      </div>
     </section>
 
     <section class="section solutions" id="solucoes">
       <div class="container">
-        <div class="section-head reveal">
-          <div><span class="section-label">Nossas soluções</span><h2>Tecnologia construída para resolver <span>problemas reais.</span></h2></div>
-          <p>Ferramentas para simplificar processos, economizar tempo e criar novas oportunidades de crescimento.</p>
-        </div>
-        <div class="solutions-grid">
-          <article class="solution-card featured reveal"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/><path d="M7 3v4M17 3v4"/></svg></div><h3>Sistemas personalizados</h3><p>Gestão, cadastro, financeiro, relatórios e fluxos específicos do seu negócio em uma plataforma feita sob medida.</p><a href="#contato">Desenhar meu sistema <span>→</span></a></article>
-          <article class="solution-card featured reveal"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 18h4"/><path d="M9 6h6"/></svg></div><h3>Aplicativos e plataformas</h3><p>Experiências modernas para celular e web, pensadas para clientes, colaboradores e processos internos.</p><a href="#contato">Criar uma solução <span>→</span></a></article>
-          <article class="solution-card reveal"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.3 3.7L17 8l-3.7 1.3L12 13l-1.3-3.7L7 8l3.7-1.3z"/><path d="M18.5 13.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/><path d="M5.5 13l.8 2.1 2.2.9-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.9z"/></svg></div><h3>IA aplicada</h3><p>Análise, atendimento e apoio à decisão com inteligência integrada à rotina.</p></article>
-          <article class="solution-card reveal"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 9-13h-6z"/></svg></div><h3>Automações</h3><p>Menos tarefas repetitivas e mais tempo para o que realmente importa.</p></article>
-          <article class="solution-card reveal"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Dashboards</h3><p>Indicadores, gráficos e relatórios para enxergar a operação com clareza.</p></article>
-          <article class="solution-card reveal"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg></div><h3>Sites e presença digital</h3><p>Projetos comerciais que apresentam melhor sua empresa e geram oportunidades.</p></article>
+        <div class="section-heading"><div><span class="eyebrow">SOLUÇÕES FLORINDO</span><h2>Sua próxima etapa<br>começa com <span>mais clareza.</span></h2></div><p>Organize a operação, conecte pessoas e simplifique tarefas. Começamos pelo que sua empresa precisa resolver.</p></div>
+        <div class="solution-grid">
+          <article class="solution-card"><div class="card-top"><svg class="line-icon" aria-hidden="true"><use href="#icon-system"/></svg><span>01</span></div><h3>Sistemas de gestão</h3><p>Uma visão mais organizada da rotina, dos clientes e das informações do seu negócio.</p><ul><li>Cadastros e processos</li><li>Controle financeiro</li><li>Relatórios e indicadores</li></ul><a class="text-link" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20sistema%20de%20gest%C3%A3o%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer">Quero organizar minha gestão <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></article>
+          <article class="solution-card"><div class="card-top"><svg class="line-icon" aria-hidden="true"><use href="#icon-mobile"/></svg><span>02</span></div><h3>Aplicativos e sites</h3><p>Experiências digitais para aproximar sua empresa de clientes e facilitar o trabalho da equipe.</p><ul><li>Plataformas para web</li><li>Soluções para celular</li><li>Sites para apresentar e vender</li></ul><a class="text-link" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20aplicativo%20ou%20site%20para%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer">Vamos criar meu projeto <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></article>
+          <article class="solution-card"><div class="card-top"><svg class="line-icon" aria-hidden="true"><use href="#icon-spark"/></svg><span>03</span></div><h3>Automações e IA</h3><p>Transforme tarefas repetitivas em fluxos mais práticos, com inteligência onde ela faz sentido.</p><ul><li>Rotinas automatizadas</li><li>Integração de informações</li><li>Apoio ao atendimento e à análise</li></ul><a class="text-link" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20identificar%20oportunidades%20de%20automa%C3%A7%C3%A3o%20na%20minha%20empresa." target="_blank" rel="noopener noreferrer">Simplifique minha rotina <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></article>
         </div>
       </div>
     </section>
 
-    <section class="section statement-section"><div class="container statement-grid"><div class="reveal"><span class="section-label dark-label">Desenvolvimento sob medida</span><h2>Seu negócio não precisa se adaptar ao sistema.</h2><p>O sistema é que deve se adaptar ao seu negócio. Entendemos sua rotina e transformamos necessidades específicas em tecnologia prática e escalável.</p></div><div class="statement-quote reveal"><span class="quote-mark">“</span><p>Tecnologia boa é aquela que a equipe entende, usa e percebe resultado no dia a dia.</p></div></div></section>
-
-    <section class="section education-section" id="educacao"><div class="container education-card reveal"><div class="education-copy"><span class="section-label">Nossa principal especialidade</span><h2>Florindo <span>Educação</span></h2><p>Educação ocupa um lugar especial dentro do ecossistema Florindo Sistemas. Criamos soluções que conectam gestão, professores, famílias e informação.</p><div class="feature-list"><span><i>✓</i> Gestão escolar</span><span><i>✓</i> Diário de classe</span><span><i>✓</i> Notas e boletins</span><span><i>✓</i> Comunicação com famílias</span><span><i>✓</i> Relatórios pedagógicos</span><span><i>✓</i> Soluções sob medida</span></div><a class="text-link" href="#contato">Quero conhecer <span>→</span></a></div><div class="education-visual"><span class="education-symbol" aria-hidden="true">E<span>↗</span></span><div class="education-lines"><span>Gestão escolar</span><span>Rotina pedagógica</span><span>Comunicação com famílias</span></div><div class="visual-badge">Nossa origem. Nossa principal especialidade.</div></div></div></section>
-
-    <section class="section segments-section" id="segmentos">
+    <section class="section segments" id="segmentos">
       <div class="container">
-        <div class="section-head light-head reveal"><div><span class="section-label dark-label">Segmentos</span><h2>Uma base tecnológica.<br>Vários negócios.</h2></div><p>Nossa abordagem adapta tecnologia, interface e processos ao contexto de cada cliente.</p></div>
-        <div class="segments-grid">
-          <article class="segment-photo education segment-education-bg reveal"><div class="segment-content"><span>Educação</span><h3>Gestão que aproxima escola, equipe e família.</h3><p>Nossa principal vertical e área de maior especialização.</p></div></article>
-          <article class="segment-photo health segment-health-bg reveal"><div class="segment-content"><span>Saúde</span><h3>Organização para quem cuida de pessoas.</h3><p>Atendimentos, avaliações, relatórios e gestão.</p></div></article>
-          <article class="segment-photo services segment-services-bg reveal"><div class="segment-content"><span>Serviços</span><h3>Mais eficiência para equipes que atendem e entregam.</h3><p>Operação, clientes, contratos, agendas e indicadores em um só lugar.</p></div></article>
-          <article class="segment-photo retail segment-retail-bg reveal"><div class="segment-content"><span>Comércio</span><h3>Controle e relacionamento para vender melhor.</h3><p>Vendas, estoque, clientes e gestão digital para a rotina do negócio.</p></div></article>
-          <article class="segment-mini project-card reveal"><div class="mini-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"/></svg></div><div><h3>Seu projeto</h3><p>Uma ideia específica? Podemos desenhar a solução com você.</p></div></article>
+        <div class="section-heading"><div><span class="eyebrow">DIFERENTES NEGÓCIOS. NOVAS POSSIBILIDADES.</span><h2>Entender sua rotina<br>é o nosso <span>ponto de partida.</span></h2></div><p>Cada segmento tem desafios próprios. A tecnologia precisa fazer sentido para quem usa todos os dias.</p></div>
+        <div class="segment-grid">
+          <a class="segment-card" href="#educacao"><div class="segment-image"><img src="assets/education-768.webp" srcset="assets/education-768.webp 768w, assets/education-1536.webp 1536w" sizes="(max-width: 540px) calc(100vw - 40px), (max-width: 1000px) 45vw, 23vw" width="1536" height="1024" loading="lazy" alt="Coordenadora escolar utilizando um tablet em uma biblioteca."><span class="segment-tag">Nossa especialidade</span></div><div class="segment-copy"><h3>Educação <svg aria-hidden="true"><use href="#icon-arrow"/></svg></h3><p>Gestão escolar, rotina pedagógica e comunicação.</p></div></a>
+          <a class="segment-card" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20Florindo%20para%20a%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener noreferrer"><div class="segment-image"><img src="assets/health-768.webp" srcset="assets/health-768.webp 768w, assets/health-1536.webp 1536w" sizes="(max-width: 540px) calc(100vw - 40px), (max-width: 1000px) 45vw, 23vw" width="1536" height="1024" loading="lazy" alt="Fisioterapeuta organizando sua rotina de trabalho no notebook."></div><div class="segment-copy"><h3>Saúde <svg aria-hidden="true"><use href="#icon-arrow"/></svg></h3><p>Agenda, atendimentos, avaliações e acompanhamento.</p></div></a>
+          <a class="segment-card" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20para%20minha%20empresa%20de%20servi%C3%A7os." target="_blank" rel="noopener noreferrer"><div class="segment-image"><img src="assets/business-768.webp" srcset="assets/business-768.webp 768w, assets/business-1536.webp 1536w" sizes="(max-width: 540px) calc(100vw - 40px), (max-width: 1000px) 45vw, 23vw" width="1536" height="1024" loading="lazy" alt="Equipe de serviços colaborando em um projeto no notebook."></div><div class="segment-copy"><h3>Serviços <svg aria-hidden="true"><use href="#icon-arrow"/></svg></h3><p>Clientes, contratos e processos que se conectam.</p></div></a>
+          <a class="segment-card" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20para%20meu%20com%C3%A9rcio." target="_blank" rel="noopener noreferrer"><div class="segment-image"><img src="assets/commerce-768.webp" srcset="assets/commerce-768.webp 768w, assets/commerce-1536.webp 1536w" sizes="(max-width: 540px) calc(100vw - 40px), (max-width: 1000px) 45vw, 23vw" width="1536" height="1024" loading="lazy" alt="Empreendedora usando um tablet no balcão de sua loja."></div><div class="segment-copy"><h3>Comércio <svg aria-hidden="true"><use href="#icon-arrow"/></svg></h3><p>Vendas, estoque e relacionamento com clientes.</p></div></a>
         </div>
+        <div class="custom-project"><p>Seu negócio tem uma necessidade diferente? <strong>Vamos desenhar a solução juntos.</strong></p><a class="text-link" href="#contato">Conte sua ideia <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
       </div>
     </section>
 
-    <section class="section process-section" id="processo"><div class="container"><div class="section-head reveal"><div><span class="section-label">Como trabalhamos</span><h2>Do problema à solução.</h2></div><p>Um processo simples, próximo e orientado ao resultado para transformar uma necessidade em produto digital.</p></div><div class="process-grid"><article class="process-step reveal"><b>01</b><h3>Entendemos</h3><p>Mapeamos sua rotina, dificuldades e objetivos.</p></article><article class="process-step reveal"><b>02</b><h3>Desenhamos</h3><p>Organizamos solução, fluxo e experiência.</p></article><article class="process-step reveal"><b>03</b><h3>Desenvolvemos</h3><p>Construímos, testamos e ajustamos com você.</p></article><article class="process-step reveal"><b>04</b><h3>Acompanhamos</h3><p>Implantação, suporte e evolução contínua.</p></article></div></div></section>
+    <section class="section education" id="educacao">
+      <div class="container education-grid">
+        <div class="education-image"><img src="assets/education-1536.webp" srcset="assets/education-768.webp 768w, assets/education-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 45vw" width="1536" height="1024" loading="lazy" alt="Profissional da educação usando um tablet em ambiente escolar."><div class="education-image-note">Florindo Educação<span>Um olhar próximo para a rotina da escola.</span></div></div>
+        <div class="education-copy"><span class="eyebrow light">EDUCAÇÃO É PARTE DA NOSSA ESSÊNCIA</span><h2>Mais conexão.<br>Mais tempo para <span>educar.</span></h2><p>A educação é nossa principal especialidade. Dentro da Florindo Sistemas, desenvolvemos soluções para aproximar gestão, professores e famílias.</p><ul class="education-features"><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Gestão escolar</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Diário de classe</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Notas e boletins</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Comunicação com famílias</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Relatórios pedagógicos</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Processos personalizados</li></ul><a class="button button-cyan" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conhecer%20a%20Florindo%20Educa%C3%A7%C3%A3o%20e%20conversar%20sobre%20as%20necessidades%20da%20minha%20escola." target="_blank" rel="noopener noreferrer">Conheça Florindo Educação <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
+      </div>
+    </section>
 
-    <section class="contact-section" id="contato"><div class="container contact-grid reveal"><div><span class="section-label contact-label">Vamos conversar?</span><h2>Conte o que sua empresa precisa.<br>Nós transformamos em tecnologia.</h2><p>Fale diretamente com a Florindo Sistemas e conte seu desafio.</p></div><div class="contact-actions"><a class="btn contact-whatsapp" target="_blank" rel="noopener" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Florindo%20Sistemas%20e%20gostaria%20de%20solicitar%20uma%20proposta."><span class="wa-mark" aria-hidden="true"></span>WhatsApp</a><a class="btn contact-email" href="mailto:Florindoeducacao@gmail.com?subject=Contato%20pelo%20site%20Florindo%20Sistemas">Enviar e-mail</a></div></div></section>
+    <section class="section about" id="sobre">
+      <div class="container about-grid"><div><span class="eyebrow">PRÓXIMOS DO SEU NEGÓCIO</span><h2>Uma boa solução<br>começa com uma<br><span>boa conversa.</span></h2><p>A Florindo Sistemas transforma necessidades do dia a dia em ferramentas digitais. O projeto começa pela sua rotina e evolui com a sua participação.</p><a class="text-link" href="#contato">Converse com a Florindo <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></div><ol class="process-list"><li><span>01</span><div><h3>Entendemos seu desafio</h3><p>Conversamos sobre a operação, as dificuldades e o que você quer melhorar.</p></div></li><li><span>02</span><div><h3>Planejamos a solução</h3><p>Definimos juntos funcionalidades, prioridades, proposta e prazo.</p></div></li><li><span>03</span><div><h3>Construímos com você</h3><p>Apresentamos o projeto, ajustamos os detalhes e preparamos a implantação.</p></div></li><li><span>04</span><div><h3>Acompanhamos a evolução</h3><p>O suporte e as próximas melhorias são definidos conforme o projeto contratado.</p></div></li></ol></div>
+    </section>
+
+    <section class="section faq"><div class="container faq-grid"><div><span class="eyebrow">ANTES DE COMEÇAR</span><h2>Você pode<br><span>perguntar.</span></h2></div><div class="faq-list"><details><summary>O sistema pode ser feito para minha rotina?</summary><p>Sim. Começamos entendendo seus processos para definir uma solução adequada às suas necessidades. Funcionalidades e integrações são combinadas na proposta.</p></details><details><summary>Funciona no computador e no celular?</summary><p>Podemos planejar uma plataforma web, uma experiência para celular ou ambas. A escolha depende da rotina de uso e dos dispositivos da sua equipe.</p></details><details><summary>Como são definidos o valor e o prazo?</summary><p>Depois de uma conversa sobre seu projeto, apresentamos uma proposta com escopo, valor e prazo. Assim, você sabe o que está contratando antes do desenvolvimento.</p></details><details><summary>A Florindo trabalha apenas com educação?</summary><p>A educação é nossa principal especialidade, mas também desenvolvemos soluções para saúde, serviços, comércio e outras necessidades empresariais.</p></details></div></div></section>
+
+    <section class="contact" id="contato"><div class="container contact-grid"><div><span class="eyebrow light">VAMOS TIRAR SUA IDEIA DO PAPEL?</span><h2>O próximo passo<br>do seu negócio <span>começa aqui.</span></h2><p>Conte o que você precisa organizar, melhorar ou criar. Vamos encontrar um caminho juntos.</p><a class="contact-phone" href="tel:+5519935024102">(19) 93502-4102</a></div><div class="contact-box"><h3>Fale diretamente com a Florindo</h3><p>Uma conversa para entender seu desafio e as possibilidades do projeto.</p><a class="button button-whatsapp" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Florindo%20Sistemas%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg>Converse pelo WhatsApp <svg class="arrow" aria-hidden="true"><use href="#icon-arrow"/></svg></a><a class="email-link" href="mailto:Florindoeducacao@gmail.com?subject=Projeto%20com%20a%20Florindo%20Sistemas">Prefere e-mail? Envie sua ideia ↗</a></div></div></section>
   </main>
-
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="#inicio"><img src="assets/logo-florindo.svg" alt="Logo Florindo Sistemas"><span class="brand-text">FLORINDO <small>SISTEMAS</small></span></a><p>Sistemas, aplicativos, IA e soluções digitais para empresas. Especialistas em tecnologia para educação e saúde.</p></div><div class="footer-links"><a href="#solucoes">Soluções</a><a href="#educacao">Educação</a><a href="#segmentos">Segmentos</a><a href="#contato">Contato</a></div><div class="footer-contact"><a href="tel:+5519935024102">(19) 93502-4102</a><a href="mailto:Florindoeducacao@gmail.com">Florindoeducacao@gmail.com</a></div></div><div class="container footer-bottom">© 2026 Florindo Sistemas. Todos os direitos reservados.</div></footer>
-
-  <a class="floating-whatsapp" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Florindo%20Sistemas." target="_blank" rel="noopener" aria-label="Falar com a Florindo Sistemas no WhatsApp"><span class="wa-mark" aria-hidden="true"></span><span>Fale conosco</span></a>
-  <script src="app.js" defer></script>
+  <footer><div class="container footer-grid"><div><a class="brand" href="#inicio" aria-label="Florindo Sistemas, início"><img src="assets/logo-florindo.svg" width="48" height="48" alt=""><span>FLORINDO<small>SISTEMAS</small></span></a><p>Tecnologia próxima de quem faz acontecer.</p></div><div class="footer-links"><a href="#solucoes">Soluções</a><a href="#segmentos">Segmentos</a><a href="#educacao">Florindo Educação</a><a href="#contato">Contato</a></div><div class="footer-contact"><a href="tel:+5519935024102">(19) 93502-4102</a><a href="mailto:Florindoeducacao@gmail.com">Florindoeducacao@gmail.com</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> Florindo Sistemas.</span><span>Imagens ilustrativas.</span></div></footer>
+  <a class="floating-whatsapp" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Florindo%20Sistemas." target="_blank" rel="noopener noreferrer" aria-label="Falar com a Florindo Sistemas no WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg><span>Fale com a Florindo</span></a>
 </body>
 </html>
