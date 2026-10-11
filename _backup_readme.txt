@@ -1,0 +1,1 @@
+Backup marker before Florindo Sistemas redesign on 2026-10-10.
