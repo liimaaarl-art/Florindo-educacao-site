@@ -20,9 +20,9 @@
 
   const highlights = {
     business: {
-      label: 'SEU NEGÓCIO. MAIS POSSIBILIDADES.',
+      label: 'SISTEMAS, APLICATIVOS E AUTOMAÇÕES.',
       title: 'Tecnologia para<br>quem <span>faz acontecer.</span>',
-      description: 'Sua empresa tem um jeito próprio de trabalhar. Criamos sistemas, aplicativos e automações que acompanham essa realidade.',
+      description: 'A Florindo Sistemas cria tecnologia sob medida para organizar sua rotina, aproximar pessoas e acompanhar o crescimento do seu negócio.',
       cta: 'Encontre sua solução', href: '#contato',
       alt: 'Profissionais trabalhando juntos com um notebook em um escritório.',
       caption: 'Pessoas no centro. Tecnologia a favor.'
@@ -39,7 +39,7 @@
       label: 'SOLUÇÕES PARA SAÚDE',
       title: 'Organização para<br>quem <span>cuida de pessoas.</span>',
       description: 'Agenda, atendimentos, avaliações e relatórios. Uma rotina mais organizada para o profissional se dedicar ao que faz melhor.',
-      cta: 'Vamos falar da sua rotina', href: '#contato',
+      cta: 'Conheça os exemplos para saúde', href: '#saude',
       alt: 'Fisioterapeuta usando um notebook em uma clínica.',
       caption: 'Mais clareza no acompanhamento e na gestão.'
     }
@@ -67,3 +67,4 @@
   }));
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
+

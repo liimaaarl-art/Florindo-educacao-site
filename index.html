@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#072b40">
-  <meta name="description" content="Florindo Sistemas: sistemas personalizados, aplicativos e automações para sua empresa. Tecnologia para educação, saúde, serviços e comércio.">
+  <meta name="description" content="Florindo Sistemas: sistemas personalizados, aplicativos e automações para sua empresa. Tecnologia para barbearias, salões de beleza, saúde, educação, serviços e comércio.">
   <meta property="og:title" content="Florindo Sistemas | Tecnologia para quem faz acontecer">
   <meta property="og:description" content="Transforme a rotina do seu negócio com sistemas, aplicativos e automações feitos sob medida.">
   <meta property="og:type" content="website">
@@ -14,8 +14,10 @@
   <title>Florindo Sistemas | Tecnologia para quem faz acontecer</title>
   <link rel="icon" href="assets/logo-florindo.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/business-1536.webp" imagesrcset="assets/business-768.webp 768w, assets/business-1536.webp 1536w" imagesizes="(max-width: 760px) calc(100vw - 40px), 55vw">
-  <link rel="stylesheet" href="style.css?v=20261011c">
-  <script src="app.js?v=20261011b" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261013-publicos">
+  <link rel="stylesheet" href="audiences.css?v=20261013-publicos">
+  <script src="app.js?v=20261013-publicos" defer></script>
+  <script src="audiences.js?v=20261013-publicos" defer></script>
 </head>
 <body>
   <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
@@ -31,9 +33,7 @@
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="#inicio" aria-label="Florindo Sistemas, início"><img src="assets/logo-florindo.svg" width="48" height="48" alt=""><span>FLORINDO<small>SISTEMAS</small></span></a>
-      <nav id="mainNav" class="main-nav" aria-label="Navegação principal">
-        <a href="#solucoes">Soluções</a><a href="#segmentos">Segmentos</a><a href="#educacao">Educação</a><a href="#sobre">Sobre a Florindo</a><a class="nav-cta" href="#contato">Vamos conversar <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
-      </nav>
+      <nav id="mainNav" class="main-nav" aria-label="Navegação principal"><a href="#florindo">A Florindo</a><a href="#segmentos">Para quem</a><a href="#beleza">Beleza</a><a href="#saude">Saúde</a><a href="#educacao">Educação</a><a class="nav-cta" href="#contato">Vamos conversar <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></nav>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -41,10 +41,10 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow light" id="heroLabel">SEU NEGÓCIO. MAIS POSSIBILIDADES.</span>
+          <span class="eyebrow light" id="heroLabel">SISTEMAS, APLICATIVOS E AUTOMAÇÕES.</span>
           <h1 id="heroTitle">Tecnologia para<br>quem <span>faz acontecer.</span></h1>
-          <p id="heroDescription">Sua empresa tem um jeito próprio de trabalhar. Criamos sistemas, aplicativos e automações que acompanham essa realidade.</p>
-          <div class="hero-actions"><a id="heroCta" class="button button-cyan" href="#contato">Encontre sua solução <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a><a class="secondary-link" href="#solucoes">Conheça a Florindo Sistemas</a></div>
+          <p id="heroDescription">A Florindo Sistemas cria tecnologia sob medida para organizar sua rotina, aproximar pessoas e acompanhar o crescimento do seu negócio.</p>
+          <div class="hero-actions"><a id="heroCta" class="button button-cyan" href="#contato">Encontre sua solução <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a><a class="secondary-link" href="#florindo">Conheça a Florindo Sistemas</a></div>
           <div class="hero-highlights"><span><svg aria-hidden="true"><use href="#icon-check"/></svg>Sob medida</span><span><svg aria-hidden="true"><use href="#icon-check"/></svg>Atendimento próximo</span></div>
         </div>
         <div class="hero-visual">
@@ -58,6 +58,114 @@
       </div>
     </section>
 
+
+
+
+    <section class="section florindo-intro" id="florindo">
+      <div class="container intro-grid">
+        <div><span class="eyebrow">CONHEÇA A FLORINDO SISTEMAS</span><h2>O seu jeito de trabalhar.<br>A nossa forma de <span>criar.</span></h2></div>
+        <div><p>Transformamos necessidades da sua rotina em <strong>sistemas, aplicativos, sites e automações sob medida.</strong> Para o profissional autônomo, a pequena empresa ou uma equipe em crescimento, começamos ouvindo quem vai usar a solução.</p><p>Educação é nossa principal especialidade. Esse mesmo olhar próximo também orienta projetos para beleza, saúde, comércio e serviços.</p><a class="text-link" href="#sobre">Veja como construímos seu projeto <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
+      </div>
+    </section>
+
+    <section class="section audience-index" id="segmentos">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">ENCONTRE O SEU PÚBLICO</span><h2>Veja a tecnologia<br>na <span>sua realidade.</span></h2></div><p>Explore imagens de cada área e exemplos de como um sistema pode apoiar o dia a dia. As funcionalidades são definidas para cada projeto.</p></div>
+        <nav class="audience-links" aria-label="Públicos atendidos">
+          <a href="#beleza"><span class="audience-number">01</span><strong>Barbearias e salões</strong><span>Agenda, equipe e clientes</span><svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+          <a href="#saude"><span class="audience-number">02</span><strong>Saúde e bem-estar</strong><span>Fisioterapia, pilates e odontologia</span><svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+          <a href="#comercio"><span class="audience-number">03</span><strong>Comércio e serviços</strong><span>Vendas, projetos e financeiro</span><svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+          <a href="#educacao"><span class="audience-number">04</span><strong>Educação</strong><span class="specialty-label">Nossa principal especialidade</span><svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section sector-section beauty-sector" id="beleza">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">BARBEARIAS E SALÕES DE BELEZA</span><h2>Mais tempo para atender.<br>Mais clareza para <span>gerir.</span></h2></div><p>Horários, profissionais, serviços e recebimentos podem ficar mais organizados em uma solução pensada para a sua rotina.</p></div>
+        <div class="sector-showcase">
+          <div class="sector-photos beauty-photos">
+            <figure><img class="" src="assets/barbershop-768.webp" srcset="assets/barbershop-768.webp 768w, assets/barbershop-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 48vw" width="1536" height="1024" loading="lazy" alt="Barbeiro atendendo um cliente em uma barbearia organizada e acolhedora."><figcaption>Barbearias <span>Do corte ao próximo agendamento.</span></figcaption></figure>
+            <figure><img class="" src="assets/beauty-salon-768.webp" srcset="assets/beauty-salon-768.webp 768w, assets/beauty-salon-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 48vw" width="1536" height="1024" loading="lazy" alt="Cabeleireira atendendo uma cliente em um salão de beleza iluminado."><figcaption>Salões de beleza <span>Cada serviço, cada profissional, cada cliente.</span></figcaption></figure>
+          </div>
+          <div class="system-preview" data-demo="beauty">
+            <div class="preview-caption"><span class="preview-dot"></span>EXEMPLO DE SISTEMA <span class="preview-fictitious">Dados fictícios</span></div>
+            <div class="preview-tabs" role="tablist" aria-label="Exemplos para beleza">
+              <button id="beauty-tab-barber" role="tab" aria-selected="true" aria-controls="beauty-demo-panel" tabindex="0" data-demo-option="barber">Barbearia</button>
+              <button id="beauty-tab-salon" role="tab" aria-selected="false" aria-controls="beauty-demo-panel" tabindex="-1" data-demo-option="salon">Salão de beleza</button>
+            </div>
+            <div id="beauty-demo-panel" class="preview-panel" role="tabpanel" aria-labelledby="beauty-tab-barber" tabindex="0">
+              <div class="preview-brand"><span class="mini-mark">F</span><div><strong data-demo-brand>Florindo · Barbearia</strong><span>Gestão do seu negócio</span></div><span class="preview-avatar" aria-hidden="true">RF</span></div>
+              <div class="preview-heading"><div><span>UMA ROTINA MAIS ORGANIZADA</span><h3 data-demo-title>Agenda da equipe</h3></div><span class="preview-badge">Dia de exemplo</span></div>
+              <div class="preview-metrics"><div><span>Agendamentos</span><strong data-metric="0">8</strong></div><div><span>Profissionais</span><strong data-metric="1">2</strong></div><div><span>Confirmados</span><strong data-metric="2">6</strong></div></div>
+              <div class="preview-list-title"><strong>Próximos atendimentos</strong><span>Horário · Serviço · Profissional</span></div>
+              <div class="appointment-list" data-demo-appointments>
+                <div class="appointment"><time>09:00</time><div><strong>Corte masculino</strong><span>Cliente 01 · Profissional A</span></div><span class="status confirmed">Confirmado</span></div>
+                <div class="appointment"><time>10:00</time><div><strong>Corte + barba</strong><span>Cliente 02 · Profissional B</span></div><span class="status confirmed">Confirmado</span></div>
+                <div class="appointment"><time>11:00</time><div><strong>Barba</strong><span>Cliente 03 · Profissional A</span></div><span class="status pending">A confirmar</span></div>
+              </div>
+              <div class="preview-footer"><span class="mini-check">✓</span><span data-demo-note>Agenda e recebimentos da equipe em uma mesma visão.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="sector-bottom"><div><h3>O projeto pode incluir</h3><ul class="sector-features"><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Agendamento por profissional</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Cadastro e histórico de clientes</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Serviços, valores e comissões</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Recebimentos e despesas</li></ul></div><div><a class="button button-sector" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20da%20Florindo%20para%20minha%20barbearia%20ou%20sal%C3%A3o%20de%20beleza." target="_blank" rel="noopener noreferrer">Quero uma solução para meu espaço <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a><p class="scope-note">O exemplo apresenta possibilidades. Definimos os recursos conforme o seu negócio.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section sector-section health-sector" id="saude">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">SAÚDE E BEM-ESTAR</span><h2>Cuidar de pessoas<br>com uma rotina <span>mais organizada.</span></h2></div><p>Para consultórios de fisioterapia, estúdios de pilates e clínicas odontológicas: organização que acompanha o seu jeito de atender.</p></div>
+        <div class="sector-showcase">
+          <div class="sector-photos clinic-photos">
+            <figure class="clinic-main"><img class="" src="assets/health-768.webp" srcset="assets/health-768.webp 768w, assets/health-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 48vw" width="1536" height="1024" loading="lazy" alt="Profissional de fisioterapia organizando os atendimentos em um notebook."><figcaption>Fisioterapia <span>Atendimentos e acompanhamento.</span></figcaption></figure>
+            <figure><img class="" src="assets/pilates-studio-768.webp" srcset="assets/pilates-studio-768.webp 768w, assets/pilates-studio-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 48vw" width="1536" height="1024" loading="lazy" alt="Fisioterapeuta acompanhando uma aluna em um reformer de pilates."><figcaption>Pilates <span>Aulas, turmas e pacotes.</span></figcaption></figure>
+            <figure><img class="" src="assets/dental-clinic-768.webp" srcset="assets/dental-clinic-768.webp 768w, assets/dental-clinic-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 48vw" width="1536" height="1024" loading="lazy" alt="Dentista conversando com uma paciente em um consultório odontológico."><figcaption>Odontologia <span>Agenda e etapas do atendimento.</span></figcaption></figure>
+          </div>
+          <div class="system-preview" data-demo="health">
+            <div class="preview-caption"><span class="preview-dot"></span>EXEMPLO DE SISTEMA <span class="preview-fictitious">Dados fictícios</span></div>
+            <div class="preview-tabs" role="tablist" aria-label="Exemplos para saúde">
+              <button id="health-tab-physio" role="tab" aria-selected="true" aria-controls="health-demo-panel" tabindex="0" data-demo-option="physio">Fisioterapia</button>
+              <button id="health-tab-pilates" role="tab" aria-selected="false" aria-controls="health-demo-panel" tabindex="-1" data-demo-option="pilates">Pilates</button>
+              <button id="health-tab-dental" role="tab" aria-selected="false" aria-controls="health-demo-panel" tabindex="-1" data-demo-option="dental">Odontologia</button>
+            </div>
+            <div id="health-demo-panel" class="preview-panel" role="tabpanel" aria-labelledby="health-tab-physio" tabindex="0">
+              <div class="preview-brand"><span class="mini-mark">F</span><div><strong data-demo-brand>Florindo · Fisioterapia</strong><span>Organização do seu atendimento</span></div><span class="preview-avatar" aria-hidden="true">FM</span></div>
+              <div class="preview-heading"><div><span>INFORMAÇÕES QUE ACOMPANHAM VOCÊ</span><h3 data-demo-title>Agenda de atendimentos</h3></div><span class="preview-badge">Dia de exemplo</span></div>
+              <div class="preview-metrics"><div><span data-metric-label="0">Atendimentos</span><strong data-metric="0">6</strong></div><div><span data-metric-label="1">Pacientes</span><strong data-metric="1">24</strong></div><div><span data-metric-label="2">Confirmados</span><strong data-metric="2">5</strong></div></div>
+              <div class="preview-list-title"><strong data-demo-list-title>Próximos atendimentos</strong><span>Agenda de exemplo</span></div>
+              <div class="appointment-list" data-demo-appointments>
+                <div class="appointment"><time>08:00</time><div><strong>Avaliação funcional</strong><span>Paciente 01 · Fisioterapia</span></div><span class="status confirmed">Confirmado</span></div>
+                <div class="appointment"><time>09:00</time><div><strong>Sessão de fisioterapia</strong><span>Paciente 02 · Acompanhamento</span></div><span class="status confirmed">Confirmado</span></div>
+                <div class="appointment"><time>10:00</time><div><strong>Reavaliação</strong><span>Paciente 03 · Evolução</span></div><span class="status pending">A confirmar</span></div>
+              </div>
+              <div class="preview-footer"><span class="mini-check">✓</span><span data-demo-note>Agenda, avaliações e evolução do paciente em uma mesma rotina.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="sector-bottom"><div><h3>Possibilidades para o seu atendimento</h3><ul class="sector-features"><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Agenda de pacientes e profissionais</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Histórico e acompanhamento</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Pacotes e controle de sessões</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Recebimentos e relatórios</li></ul></div><div><a class="button button-sector" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conhecer%20as%20possibilidades%20da%20Florindo%20para%20fisioterapia%2C%20pilates%20ou%20odontologia." target="_blank" rel="noopener noreferrer">Vamos conversar sobre minha clínica <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a><p class="scope-note">Cada especialidade tem seu próprio fluxo. O escopo é definido junto com você.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section sector-section commerce-sector" id="comercio">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">COMÉRCIO E PRESTAÇÃO DE SERVIÇOS</span><h2>Seu negócio em movimento.<br>Sua gestão com <span>mais clareza.</span></h2></div><p>Para lojas, assistências técnicas e empresas de serviços: ferramentas que ajudam a acompanhar clientes, vendas, orçamentos e o financeiro.</p></div>
+        <div class="sector-showcase">
+          <div class="sector-photos beauty-photos"><figure><img class="" src="assets/commerce-768.webp" srcset="assets/commerce-768.webp 768w, assets/commerce-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 48vw" width="1536" height="1024" loading="lazy" alt="Empreendedora organizando a rotina de sua loja no tablet."><figcaption>Comércio <span>Clientes, vendas e organização.</span></figcaption></figure><figure><img class="" src="assets/business-768.webp" srcset="assets/business-768.webp 768w, assets/business-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 48vw" width="1536" height="1024" loading="lazy" alt="Profissionais de uma empresa de serviços trabalhando juntos no notebook."><figcaption>Serviços <span>Orçamentos, projetos e prazos.</span></figcaption></figure></div>
+          <div class="system-preview commerce-preview"><div class="preview-caption"><span class="preview-dot"></span>EXEMPLO DE SISTEMA <span class="preview-fictitious">Dados fictícios</span></div><div class="preview-panel"><div class="preview-brand"><span class="mini-mark">F</span><div><strong>Florindo · Meu negócio</strong><span>Clientes e financeiro</span></div><span class="preview-avatar" aria-hidden="true">RF</span></div><div class="preview-heading"><div><span>UMA VISÃO DO SEU DIA A DIA</span><h3>Resumo do mês</h3></div><span class="preview-badge">Mês de exemplo</span></div><div class="preview-metrics"><div><span>Recebimentos</span><strong>R$ 4.800</strong></div><div><span>Despesas</span><strong>R$ 1.950</strong></div><div><span>Saldo</span><strong>R$ 2.850</strong></div></div><div class="preview-chart" aria-label="Gráfico ilustrativo de recebimentos por semana"><span>Recebimentos por semana</span><div class="chart-bars"><div><i style="height:44%"></i><small>Sem. 1</small></div><div><i style="height:70%"></i><small>Sem. 2</small></div><div><i style="height:57%"></i><small>Sem. 3</small></div><div><i style="height:88%"></i><small>Sem. 4</small></div></div></div><div class="preview-footer"><span class="mini-check">✓</span>Entenda o movimento do negócio e acompanhe os próximos passos.</div></div></div>
+        </div>
+        <div class="sector-bottom"><div><h3>Organização que faz sentido para você</h3><ul class="sector-features"><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Cadastro e relacionamento com clientes</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Vendas, orçamentos e serviços</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Contas a pagar e a receber</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Relatórios para acompanhar a rotina</li></ul></div><div><a class="button button-sector" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20sistema%20personalizado%20para%20meu%20com%C3%A9rcio%20ou%20empresa%20de%20servi%C3%A7os." target="_blank" rel="noopener noreferrer">Quero organizar meu negócio <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a><p class="scope-note">Estoque, emissão fiscal e integrações são avaliados conforme a necessidade do projeto.</p></div></div>
+      </div>
+    </section>
+
+
+    <section class="section education" id="educacao">
+      <div class="container education-grid">
+        <div class="education-image"><img src="assets/education-1536.webp" srcset="assets/education-768.webp 768w, assets/education-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 45vw" width="1536" height="1024" loading="lazy" alt="Profissional da educação usando um tablet em ambiente escolar."><div class="education-image-note">Florindo Educação<span>Um olhar próximo para a rotina da escola.</span></div></div>
+        <div class="education-copy"><span class="eyebrow light">EDUCAÇÃO É PARTE DA NOSSA ESSÊNCIA</span><h2>Mais conexão.<br>Mais tempo para <span>educar.</span></h2><p>A educação é nossa principal especialidade. Dentro da Florindo Sistemas, desenvolvemos soluções para aproximar gestão, professores e famílias.</p><ul class="education-features"><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Gestão escolar</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Diário de classe</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Notas e boletins</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Comunicação com famílias</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Relatórios pedagógicos</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Processos personalizados</li></ul><a class="button button-cyan" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conhecer%20a%20Florindo%20Educa%C3%A7%C3%A3o%20e%20conversar%20sobre%20as%20necessidades%20da%20minha%20escola." target="_blank" rel="noopener noreferrer">Conheça Florindo Educação <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
+      </div>
+      <div class="container"><div class="school-example"><div class="preview-caption"><span class="preview-dot"></span>EXEMPLO DE GESTÃO ESCOLAR <span class="preview-fictitious">Dados fictícios</span></div><div class="school-example-body"><div><span class="school-example-label">DIÁRIO DE CLASSE</span><h3>Uma rotina escolar conectada.</h3><p>Turmas, frequência, registros e avaliações em uma visão organizada.</p></div><div class="school-mini-list"><div><strong>6º ano · Turma A</strong><span>Frequência registrada</span></div><div><strong>7º ano · Turma B</strong><span>Avaliações organizadas</span></div><div><strong>8º ano · Turma A</strong><span>Registros pedagógicos</span></div></div></div></div></div>
+    </section>
+
     <section class="section solutions" id="solucoes">
       <div class="container">
         <div class="section-heading"><div><span class="eyebrow">SOLUÇÕES FLORINDO</span><h2>Sua próxima etapa<br>começa com <span>mais clareza.</span></h2></div><p>Organize a operação, conecte pessoas e simplifique tarefas. Começamos pelo que sua empresa precisa resolver.</p></div>
@@ -69,35 +177,16 @@
       </div>
     </section>
 
-    <section class="section segments" id="segmentos">
-      <div class="container">
-        <div class="section-heading"><div><span class="eyebrow">DIFERENTES NEGÓCIOS. NOVAS POSSIBILIDADES.</span><h2>Entender sua rotina<br>é o nosso <span>ponto de partida.</span></h2></div><p>Cada segmento tem desafios próprios. A tecnologia precisa fazer sentido para quem usa todos os dias.</p></div>
-        <div class="segment-grid">
-          <a class="segment-card" href="#educacao"><div class="segment-image"><img src="assets/education-768.webp" srcset="assets/education-768.webp 768w, assets/education-1536.webp 1536w" sizes="(max-width: 540px) calc(100vw - 40px), (max-width: 1000px) 45vw, 23vw" width="1536" height="1024" loading="lazy" alt="Coordenadora escolar utilizando um tablet em uma biblioteca."><span class="segment-tag">Nossa especialidade</span></div><div class="segment-copy"><h3>Educação <svg aria-hidden="true"><use href="#icon-arrow"/></svg></h3><p>Gestão escolar, rotina pedagógica e comunicação.</p></div></a>
-          <a class="segment-card" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20Florindo%20para%20a%20%C3%A1rea%20da%20sa%C3%BAde." target="_blank" rel="noopener noreferrer"><div class="segment-image"><img src="assets/health-768.webp" srcset="assets/health-768.webp 768w, assets/health-1536.webp 1536w" sizes="(max-width: 540px) calc(100vw - 40px), (max-width: 1000px) 45vw, 23vw" width="1536" height="1024" loading="lazy" alt="Fisioterapeuta organizando sua rotina de trabalho no notebook."></div><div class="segment-copy"><h3>Saúde <svg aria-hidden="true"><use href="#icon-arrow"/></svg></h3><p>Agenda, atendimentos, avaliações e acompanhamento.</p></div></a>
-          <a class="segment-card" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20para%20minha%20empresa%20de%20servi%C3%A7os." target="_blank" rel="noopener noreferrer"><div class="segment-image"><img src="assets/business-768.webp" srcset="assets/business-768.webp 768w, assets/business-1536.webp 1536w" sizes="(max-width: 540px) calc(100vw - 40px), (max-width: 1000px) 45vw, 23vw" width="1536" height="1024" loading="lazy" alt="Equipe de serviços colaborando em um projeto no notebook."></div><div class="segment-copy"><h3>Serviços <svg aria-hidden="true"><use href="#icon-arrow"/></svg></h3><p>Clientes, contratos e processos que se conectam.</p></div></a>
-          <a class="segment-card" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20para%20meu%20com%C3%A9rcio." target="_blank" rel="noopener noreferrer"><div class="segment-image"><img src="assets/commerce-768.webp" srcset="assets/commerce-768.webp 768w, assets/commerce-1536.webp 1536w" sizes="(max-width: 540px) calc(100vw - 40px), (max-width: 1000px) 45vw, 23vw" width="1536" height="1024" loading="lazy" alt="Empreendedora usando um tablet no balcão de sua loja."></div><div class="segment-copy"><h3>Comércio <svg aria-hidden="true"><use href="#icon-arrow"/></svg></h3><p>Vendas, estoque e relacionamento com clientes.</p></div></a>
-        </div>
-        <div class="custom-project"><p>Seu negócio tem uma necessidade diferente? <strong>Vamos desenhar a solução juntos.</strong></p><a class="text-link" href="#contato">Conte sua ideia <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
-      </div>
-    </section>
-
-    <section class="section education" id="educacao">
-      <div class="container education-grid">
-        <div class="education-image"><img src="assets/education-1536.webp" srcset="assets/education-768.webp 768w, assets/education-1536.webp 1536w" sizes="(max-width: 760px) calc(100vw - 40px), 45vw" width="1536" height="1024" loading="lazy" alt="Profissional da educação usando um tablet em ambiente escolar."><div class="education-image-note">Florindo Educação<span>Um olhar próximo para a rotina da escola.</span></div></div>
-        <div class="education-copy"><span class="eyebrow light">EDUCAÇÃO É PARTE DA NOSSA ESSÊNCIA</span><h2>Mais conexão.<br>Mais tempo para <span>educar.</span></h2><p>A educação é nossa principal especialidade. Dentro da Florindo Sistemas, desenvolvemos soluções para aproximar gestão, professores e famílias.</p><ul class="education-features"><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Gestão escolar</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Diário de classe</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Notas e boletins</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Comunicação com famílias</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Relatórios pedagógicos</li><li><svg aria-hidden="true"><use href="#icon-check"/></svg>Processos personalizados</li></ul><a class="button button-cyan" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20quero%20conhecer%20a%20Florindo%20Educa%C3%A7%C3%A3o%20e%20conversar%20sobre%20as%20necessidades%20da%20minha%20escola." target="_blank" rel="noopener noreferrer">Conheça Florindo Educação <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
-      </div>
-    </section>
-
     <section class="section about" id="sobre">
       <div class="container about-grid"><div><span class="eyebrow">PRÓXIMOS DO SEU NEGÓCIO</span><h2>Uma boa solução<br>começa com uma<br><span>boa conversa.</span></h2><p>A Florindo Sistemas transforma necessidades do dia a dia em ferramentas digitais. O projeto começa pela sua rotina e evolui com a sua participação.</p><a class="text-link" href="#contato">Converse com a Florindo <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></div><ol class="process-list"><li><span>01</span><div><h3>Entendemos seu desafio</h3><p>Conversamos sobre a operação, as dificuldades e o que você quer melhorar.</p></div></li><li><span>02</span><div><h3>Planejamos a solução</h3><p>Definimos juntos funcionalidades, prioridades, proposta e prazo.</p></div></li><li><span>03</span><div><h3>Construímos com você</h3><p>Apresentamos o projeto, ajustamos os detalhes e preparamos a implantação.</p></div></li><li><span>04</span><div><h3>Acompanhamos a evolução</h3><p>O suporte e as próximas melhorias são definidos conforme o projeto contratado.</p></div></li></ol></div>
     </section>
 
-    <section class="section faq"><div class="container faq-grid"><div><span class="eyebrow">ANTES DE COMEÇAR</span><h2>Você pode<br><span>perguntar.</span></h2></div><div class="faq-list"><details><summary>O sistema pode ser feito para minha rotina?</summary><p>Sim. Começamos entendendo seus processos para definir uma solução adequada às suas necessidades. Funcionalidades e integrações são combinadas na proposta.</p></details><details><summary>Funciona no computador e no celular?</summary><p>Podemos planejar uma plataforma web, uma experiência para celular ou ambas. A escolha depende da rotina de uso e dos dispositivos da sua equipe.</p></details><details><summary>Como são definidos o valor e o prazo?</summary><p>Depois de uma conversa sobre seu projeto, apresentamos uma proposta com escopo, valor e prazo. Assim, você sabe o que está contratando antes do desenvolvimento.</p></details><details><summary>A Florindo trabalha apenas com educação?</summary><p>A educação é nossa principal especialidade, mas também desenvolvemos soluções para saúde, serviços, comércio e outras necessidades empresariais.</p></details></div></div></section>
+    <section class="section faq"><div class="container faq-grid"><div><span class="eyebrow">ANTES DE COMEÇAR</span><h2>Você pode<br><span>perguntar.</span></h2></div><div class="faq-list"><details><summary>O sistema pode ser feito para minha rotina?</summary><p>Sim. Começamos entendendo seus processos para definir uma solução adequada às suas necessidades. Funcionalidades e integrações são combinadas na proposta.</p></details><details><summary>Funciona no computador e no celular?</summary><p>Podemos planejar uma plataforma web, uma experiência para celular ou ambas. A escolha depende da rotina de uso e dos dispositivos da sua equipe.</p></details><details><summary>Como são definidos o valor e o prazo?</summary><p>Depois de uma conversa sobre seu projeto, apresentamos uma proposta com escopo, valor e prazo. Assim, você sabe o que está contratando antes do desenvolvimento.</p></details><details><summary>Preciso começar com um projeto grande?</summary><p>Podemos começar por uma necessidade específica, com uma solução simples e prioridades bem definidas. O investimento depende do escopo; você conhece a proposta antes de decidir.</p></details><details><summary>Já uso um sistema. A Florindo pode me ajudar?</summary><p>Conversamos sobre o que já funciona e o que ainda precisa melhorar. Podemos planejar uma solução para uma necessidade específica e avaliar integrações quando fizerem sentido.</p></details><details><summary>A Florindo trabalha apenas com educação?</summary><p>A educação é nossa principal especialidade, mas também desenvolvemos soluções para saúde, serviços, comércio e outras necessidades empresariais.</p></details></div></div></section>
 
     <section class="contact" id="contato"><div class="container contact-grid"><div><span class="eyebrow light">VAMOS TIRAR SUA IDEIA DO PAPEL?</span><h2>O próximo passo<br>do seu negócio <span>começa aqui.</span></h2><p>Conte o que você precisa organizar, melhorar ou criar. Vamos encontrar um caminho juntos.</p><a class="contact-phone" href="tel:+5519935024102">(19) 93502-4102</a></div><div class="contact-box"><h3>Fale diretamente com a Florindo</h3><p>Uma conversa para entender seu desafio e as possibilidades do projeto.</p><a class="button button-whatsapp" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Florindo%20Sistemas%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#icon-whatsapp"/></svg>Converse pelo WhatsApp <svg class="arrow" aria-hidden="true"><use href="#icon-arrow"/></svg></a><a class="email-link" href="mailto:Florindoeducacao@gmail.com?subject=Projeto%20com%20a%20Florindo%20Sistemas">Prefere e-mail? Envie sua ideia ↗</a></div></div></section>
   </main>
-  <footer><div class="container footer-grid"><div><a class="brand" href="#inicio" aria-label="Florindo Sistemas, início"><img src="assets/logo-florindo.svg" width="48" height="48" alt=""><span>FLORINDO<small>SISTEMAS</small></span></a><p>Tecnologia próxima de quem faz acontecer.</p></div><div class="footer-links"><a href="#solucoes">Soluções</a><a href="#segmentos">Segmentos</a><a href="#educacao">Florindo Educação</a><a href="#contato">Contato</a></div><div class="footer-contact"><a href="tel:+5519935024102">(19) 93502-4102</a><a href="mailto:Florindoeducacao@gmail.com">Florindoeducacao@gmail.com</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> Florindo Sistemas.</span><span>Imagens ilustrativas.</span></div></footer>
+  <footer><div class="container footer-grid"><div><a class="brand" href="#inicio" aria-label="Florindo Sistemas, início"><img src="assets/logo-florindo.svg" width="48" height="48" alt=""><span>FLORINDO<small>SISTEMAS</small></span></a><p>Tecnologia próxima de quem faz acontecer.</p></div><div class="footer-links"><a href="#solucoes">Soluções</a><a href="#segmentos">Segmentos</a><a href="#educacao">Florindo Educação</a><a href="#contato">Contato</a></div><div class="footer-contact"><a href="tel:+5519935024102">(19) 93502-4102</a><a href="mailto:Florindoeducacao@gmail.com">Florindoeducacao@gmail.com</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> Florindo Sistemas.</span><span>Imagens e exemplos de sistemas ilustrativos.</span></div></footer>
   <a class="floating-whatsapp" href="https://wa.me/5519935024102?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Florindo%20Sistemas." target="_blank" rel="noopener noreferrer" aria-label="Falar com a Florindo Sistemas no WhatsApp"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#icon-whatsapp"/></svg><span>Fale com a Florindo</span></a>
 </body>
 </html>
+
