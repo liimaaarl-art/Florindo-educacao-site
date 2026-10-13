@@ -32,7 +32,7 @@
       title: 'Mais conexão.<br>Mais tempo para <span>educar.</span>',
       description: 'Gestão escolar, rotina pedagógica e comunicação em soluções pensadas para quem faz a educação acontecer todos os dias.',
       cta: 'Conheça Florindo Educação', href: '#educacao',
-      alt: 'Coordenadora escolar usando um tablet em uma biblioteca.',
+      alt: 'Professora registrando a chamada no tablet em uma sala de aula.',
       caption: 'Tecnologia próxima da rotina escolar.'
     },
     health: {
@@ -55,8 +55,9 @@
     const cta = document.getElementById('heroCta');
     cta.firstChild.textContent = item.cta + ' ';
     cta.setAttribute('href', item.href);
-    image.srcset = `assets/${name}-768.webp 768w, assets/${name}-1536.webp 1536w`;
-    image.src = `assets/${name}-1536.webp`;
+    const photoName = name === 'education' ? 'education-classroom' : name;
+    image.srcset = `assets/${photoName}-768.webp 768w, assets/${photoName}-1536.webp 1536w`;
+    image.src = `assets/${photoName}-1536.webp`;
     image.alt = item.alt;
     document.getElementById('heroImageLabel').textContent = item.caption;
     buttons.forEach(other => {
@@ -67,4 +68,5 @@
   }));
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
+
 
